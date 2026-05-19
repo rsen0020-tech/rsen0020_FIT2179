@@ -1,27 +1,24 @@
 var mapSpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Hectares burnt by Victorian LGA",
+    "title": "Victorian Bushfires by LGA",
     "width": 800,
-    "height": 500,
+    "height": 600,
     "projection": {"type": "mercator"},
     "data": {
-        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-local-government-areas.json",
-        "format": {
-            "type": "topojson",
-            "feature": "ne_10m_admin_2_au_local_gov"
-        }
+        "url": "https://raw.githubusercontent.com/rsen0020-tech/rsen0020_FIT2179/refs/heads/main/data/LGA_2025_AUST_GDA2020.json",
+        "format": {"type": "topojson", "feature": "LGA_2025_AUST_GDA2020"}
     },
     "transform": [
         {
-            "lookup": "properties.NAME_2",
+            "lookup": "properties.LGA_NAME25",
             "from": {
-                "data": {"url": "data/vic_lga_sample.csv"},
+                "data": {"url": "https://raw.githubusercontent.com/rsen0020-tech/rsen0020_FIT2179/refs/heads/main/data/vic_lga.csv"},
                 "key": "lga_name",
                 "fields": ["hectares_burnt"]
             }
         },
         {
-            "filter": "datum.properties.NAME_1 == 'Victoria'"
+            "filter": "datum.properties.STE_NAME21 == 'Victoria'"
         }
     ],
     "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
@@ -33,7 +30,7 @@ var mapSpec = {
             "title": "Hectares burnt"
         },
         "tooltip": [
-            {"field": "properties.NAME_2", "type": "nominal", "title": "LGA"},
+            {"field": "properties.LGA_NAME25", "type": "nominal", "title": "LGA"},
             {"field": "hectares_burnt", "type": "quantitative", "title": "Hectares"}
         ]
     }
