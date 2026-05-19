@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f6f1;
+}
+h1, h2 {
+    color: #b34700;
+}
+#map {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
