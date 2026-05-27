@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,400&display=swap">
     <link rel="stylesheet" href="css/layout.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -21,8 +21,9 @@
 
     <header class="hero">
         <div class="content">
+            <p class="eyebrow">Victoria &middot; A data story</p>
             <h1>Victorian Bushfires</h1>
-            <p class="tagline">A century of fire &mdash; and the schools in its path.</p>
+            <p class="lede">A century of fire &mdash; and the schools in its path.</p>
             <p class="intro">
                 Bushfire is woven into life in Victoria. Over more than a hundred years the state
                 has burned and burned again, and each summer thousands of children sit in classrooms
@@ -33,6 +34,24 @@
                 for everyday Victorians: parents, teachers, and anyone who wants to understand the
                 risk where they live.
             </p>
+            <p class="byline">[Your Full Name] &middot; May 2026</p>
+            <div class="kpi-row">
+                <div class="kpi">
+                    <div class="kpi-label">At-risk facilities</div>
+                    <div class="kpi-value">893</div>
+                    <div class="kpi-sub">across 61 local government areas</div>
+                </div>
+                <div class="kpi kpi-2">
+                    <div class="kpi-label">Recorded bushfires</div>
+                    <div class="kpi-value">9,130</div>
+                    <div class="kpi-sub">in Victoria since 1903</div>
+                </div>
+                <div class="kpi kpi-3">
+                    <div class="kpi-label">Largest single fire</div>
+                    <div class="kpi-value">2.4M<span class="kpi-unit">ha</span></div>
+                    <div class="kpi-sub">the 1939 Black Friday fires</div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -59,6 +78,11 @@
                     </div>
                 </div>
             </div>
+
+            <p class="callout">
+                Risk is highly concentrated: just three shires &mdash; Yarra Ranges, Greater Bendigo and
+                Nillumbik &mdash; hold almost a third of every at-risk facility in the state.
+            </p>
 
             <p>
                 The <strong>Central</strong> fire weather district &mdash; one of nine regions the Bureau
@@ -126,6 +150,11 @@
                 </div>
             </div>
 
+            <p class="callout">
+                A handful of seasons dominate the record: 2003, 2006, 2009 and the 2019&ndash;20 Black
+                Summer together account for the great majority of the area burnt since 1950.
+            </p>
+
             <p>
                 Those spikes line up with the seasons Victorians remember by name. Bushfires cluster
                 tightly in <strong>summer</strong>, December to February, while prescribed burning is
@@ -174,6 +203,7 @@
         </section>
 
         <footer>
+            <div class="meta-card">
             <h2>About this project</h2>
             <p><strong>Author:</strong> [Your Full Name] &mdash; [Student ID]</p>
             <p><strong>Last updated:</strong> May 2026</p>
@@ -204,6 +234,7 @@
                 aggregate the source data into the summary tables in <code>/data</code>. All underlying
                 data is unmodified and drawn from the sources listed above.
             </p>
+            </div>
         </footer>
 
     </main>
