@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "REQUIRED MAP. Choropleth of area burnt by Victorian Local Government Area. Uses an equal-area projection (conicEqualArea) so colour intensity can be compared fairly across regions of different size. SAMPLE DATA - swap data/LGA_VIC.topojson and data/burnt_area_by_lga.csv for real DEECA fire-history figures.",
+  "title": {
+    "text": "Area burnt by Local Government Area",
+    "subtitle": "SAMPLE DATA - replace files in /data with real Victorian fire-history data",
+    "subtitleColor": "#b34700",
+    "anchor": "start",
+    "fontSize": 16
+  },
+  "width": "container",
+  "height": 420,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [-145, 0, 0],
+    "parallels": [-36, -38]
+  },
+  "data": {
+    "url": "data/LGA_VIC.topojson",
+    "format": {"type": "topojson", "feature": "lga"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.lga_name",
+      "from": {
+        "data": {"url": "data/burnt_area_by_lga.csv"},
+        "key": "lga_name",
+        "fields": ["area_burnt_ha"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.6},
+  "encoding": {
+    "color": {
+      "field": "area_burnt_ha",
+      "type": "quantitative",
+      "title": "Area burnt (ha)",
+      "scale": {"scheme": "yelloworangered"}
+    },
+    "tooltip": [
+      {"field": "properties.lga_name", "type": "nominal", "title": "LGA"},
+      {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (ha)", "format": ","}
+    ]
+  }
+}

@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victorian Bushfires</title>
+    <meta name="author" content="[Your Full Name]">
 
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap">
     <link rel="stylesheet" href="css/layout.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -13,17 +18,186 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-    <div class="pure-g">
-        <div class="pure-u-1">
-            <h1>Victorian Bushfires</h1>
-            <p>Where, when, and why Victoria burns.</p>
-        </div>
 
-        <div class="pure-u-1">
-            <h2>Area burnt by LGA</h2>
-            <div id="map"></div>
-        </div>
+    <!-- Remove this banner once /data and /charts hold real data, not samples. -->
+    <div class="banner">
+        &#9888; This page currently shows <strong>SAMPLE / PLACEHOLDER data</strong>.
+        Replace the files in <code>/data</code> and the inline values in <code>/charts</code>
+        with real data before submitting &mdash; submitting fabricated data breaches the assignment rules.
     </div>
+
+    <header class="hero">
+        <div class="content">
+            <h1>Victorian Bushfires</h1>
+            <p class="tagline">Where, when, and why Victoria burns.</p>
+            <p class="intro">
+                Bushfire is part of life in Victoria, but the risk is not shared evenly.
+                Some communities face fire almost every summer while others rarely do, and the
+                worst seasons are becoming hotter and more destructive. This page maps where fire
+                strikes hardest, traces how it has changed over time, and shows how a warming
+                climate is reshaping the fire season &mdash; written for everyday Victorians who
+                want to understand the risk where they live.
+            </p>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <!-- ===================== WHERE ===================== -->
+        <section>
+            <h2>Where does Victoria burn?</h2>
+            <p>
+                The map below shades each Local Government Area by the total area burnt.
+                Darker regions carry the heaviest fire load &mdash; typically the forested,
+                mountainous east &mdash; while cleared agricultural districts burn far less.
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="chart-card">
+                        <div id="map"></div>
+                        <p class="caption">
+                            Figure 1. Area burnt by Local Government Area. Equal-area projection.
+                            Source: DEECA Fire History (replace sample data). <em>Sample values shown.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 2 (second map):</strong> proportional-symbol map of fire
+                        ignition points (NASA FIRMS hotspots), with circle size encoding fire intensity (FRP).
+                        <em>Idiom: point / symbol map.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== WHEN ===================== -->
+        <section>
+            <h2>When does it burn?</h2>
+            <p>
+                Fire in Victoria is highly seasonal and increasingly spiky. The line chart shows
+                how much burns each season; the heatmap shows which months drive that total.
+                Note the stand-out seasons &mdash; Black Saturday (2009) and Black Summer (2019&ndash;20).
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-card">
+                        <div id="chart-trend"></div>
+                        <p class="caption">Figure 3. Area burnt per fire season. <em>Sample values shown.</em></p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-card">
+                        <div id="chart-season"></div>
+                        <p class="caption">Figure 4. Fires by month and season. <em>Sample values shown.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 5:</strong> annotated line of summer temperature or the
+                        Forest Fire Danger Index across decades, with text callouts on the major fire seasons.
+                        <em>Idiom: annotated line.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== WHY ===================== -->
+        <section>
+            <h2>Why does it burn?</h2>
+            <p>
+                Bigger fire seasons line up with hotter, drier summers. The scatter plot combines
+                Bureau of Meteorology temperature with the area-burnt data above &mdash; two independent
+                sources telling one story.
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-card">
+                        <div id="chart-climate"></div>
+                        <p class="caption">
+                            Figure 6. Summer temperature vs area burnt (BoM + DEECA). <em>Sample values shown.</em>
+                        </p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 7:</strong> stacked bar of area burnt by cause
+                        (lightning / planned burn / accidental / arson) per season.
+                        <em>Idiom: stacked bar.</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 8:</strong> histogram of individual fire sizes
+                        (most fires are small; a few are enormous). <em>Idiom: histogram.</em>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 9:</strong> donut / arc showing the share of fires by cause.
+                        <em>Idiom: part-to-whole.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== WHO ===================== -->
+        <section>
+            <h2>Who is exposed?</h2>
+            <p>
+                Fire risk matters most where people live. These final views connect burnt area to
+                population so readers can see which communities carry the greatest exposure.
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 10 (custom, aim for HD):</strong> bivariate choropleth of
+                        area burnt &times; population exposed, combining DEECA fire data with ABS population.
+                        <em>Idiom: bivariate map (derived data).</em>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="chart-stub">
+                        <strong>TODO &mdash; Chart 11:</strong> ranked bar of the largest individual fires or
+                        the worst seasons on record. <em>Idiom: ranked bar.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== METADATA ===================== -->
+        <footer>
+            <h2>About this visualisation</h2>
+            <p><strong>Author:</strong> [Your Full Name] &mdash; [Student ID]</p>
+            <p><strong>Last updated:</strong> May 2026</p>
+            <p><strong>Data sources</strong> (paste the exact dataset URLs you download):</p>
+            <ul>
+                <li>DEECA / DELWP Victorian Fire History &mdash; data.vic.gov.au &mdash; [URL]</li>
+                <li>Bureau of Meteorology climate data &mdash; bom.gov.au &mdash; [URL]</li>
+                <li>ABS Local Government Area boundaries (ASGS) &mdash; abs.gov.au &mdash; [URL]</li>
+                <li>NASA FIRMS active fire data (optional second map) &mdash; [URL]</li>
+            </ul>
+            <p class="ack">
+                <strong>Use of AI:</strong> generative AI (Claude) was used to scaffold this web page
+                and the Vega-Lite specifications and to help edit narrative text, in line with the unit's
+                AI policy. All data and analysis are the author's own.
+            </p>
+        </footer>
+
+    </main>
 
     <script src="js/vega_lite_vis.js"></script>
 </body>
