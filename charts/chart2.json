@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Temporal idiom (line). Area burnt per fire season over time. SAMPLE DATA - replace the values array with real DEECA seasonal totals.",
+  "title": {
+    "text": "Area burnt each fire season",
+    "subtitle": "SAMPLE DATA - replace values with real DEECA totals",
+    "subtitleColor": "#b34700",
+    "anchor": "start",
+    "fontSize": 16
+  },
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "data": {
+    "values": [
+      {"year": 2005, "area_burnt_ha": 95000},
+      {"year": 2006, "area_burnt_ha": 160000},
+      {"year": 2007, "area_burnt_ha": 90000},
+      {"year": 2008, "area_burnt_ha": 60000},
+      {"year": 2009, "area_burnt_ha": 430000},
+      {"year": 2010, "area_burnt_ha": 50000},
+      {"year": 2011, "area_burnt_ha": 40000},
+      {"year": 2012, "area_burnt_ha": 70000},
+      {"year": 2013, "area_burnt_ha": 120000},
+      {"year": 2014, "area_burnt_ha": 110000},
+      {"year": 2015, "area_burnt_ha": 85000},
+      {"year": 2016, "area_burnt_ha": 95000},
+      {"year": 2017, "area_burnt_ha": 75000},
+      {"year": 2018, "area_burnt_ha": 130000},
+      {"year": 2019, "area_burnt_ha": 120000},
+      {"year": 2020, "area_burnt_ha": 390000},
+      {"year": 2021, "area_burnt_ha": 60000},
+      {"year": 2022, "area_burnt_ha": 45000},
+      {"year": 2023, "area_burnt_ha": 70000},
+      {"year": 2024, "area_burnt_ha": 90000}
+    ]
+  },
+  "mark": {"type": "line", "point": true, "color": "#b34700"},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "Fire season (year ending)", "axis": {"labelAngle": 0}},
+    "y": {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (hectares)"},
+    "tooltip": [
+      {"field": "year", "type": "ordinal", "title": "Season"},
+      {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (ha)", "format": ","}
+    ]
+  }
+}
