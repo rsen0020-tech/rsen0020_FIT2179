@@ -8,10 +8,12 @@
   "config": {"font": "Source Sans 3, sans-serif"},
   "data": {"url": "data/hist_top_fires.csv"},
   "transform": [{"calculate": "datum.fire_name + ' (' + datum.year + ')'", "as": "label"}],
+  "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover", "clear": "pointerout"}}],
   "mark": {"type": "bar", "color": "#b34700"},
   "encoding": {
     "y": {"field": "label", "type": "nominal", "title": null, "sort": "-x"},
     "x": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)"},
+    "fillOpacity": {"condition": {"param": "hover", "empty": false, "value": 1}, "value": 0.85},
     "tooltip": [{"field": "fire_name", "type": "nominal", "title": "Fire"}, {"field": "year", "type": "quantitative", "title": "Year", "format": "d"}, {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}]
   }
 }

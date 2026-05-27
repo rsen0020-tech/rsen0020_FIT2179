@@ -11,10 +11,12 @@
     {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "n", "order": "descending"}]},
     {"filter": "datum.rank <= 15"}
   ],
+  "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover", "clear": "pointerout"}}],
   "mark": {"type": "bar", "color": "#b34700"},
   "encoding": {
     "y": {"field": "lga_name", "type": "nominal", "title": null, "sort": "-x"},
     "x": {"field": "n", "type": "quantitative", "title": "At-risk facilities"},
+    "fillOpacity": {"condition": {"param": "hover", "empty": false, "value": 1}, "value": 0.85},
     "tooltip": [{"field": "lga_name", "type": "nominal", "title": "LGA"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
   }
 }
