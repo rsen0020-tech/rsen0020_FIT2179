@@ -1,0 +1,25 @@
+district,category,n
+Central,CAT 0,3
+Central,CAT 1,13
+Central,CAT 2,77
+Central,CAT 3,380
+East Gippsland,CAT 1,1
+East Gippsland,CAT 2,7
+East Gippsland,CAT 3,24
+Mallee,CAT 3,23
+North Central,CAT 2,10
+North Central,CAT 3,63
+North East,CAT 1,3
+North East,CAT 2,14
+North East,CAT 3,60
+Northern Country,CAT 2,2
+Northern Country,CAT 3,104
+South West,CAT 1,4
+South West,CAT 2,5
+South West,CAT 3,50
+West and South Gippsland,CAT 0,2
+West and South Gippsland,CAT 1,3
+West and South Gippsland,CAT 2,4
+West and South Gippsland,CAT 3,33
+Wimmera,CAT 2,1
+Wimmera,CAT 3,10

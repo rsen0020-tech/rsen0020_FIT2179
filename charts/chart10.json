@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap of bushfire counts by month and decade, showing how the summer fire season has persisted over time. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "title": {"text": "Bushfire timing across the decades", "subtitle": "Number of bushfires by month", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "width": "container",
+  "height": 320,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/hist_decade_month_bushfire.csv"},
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "x": {"field": "month", "type": "nominal", "title": null, "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "axis": {"labelAngle": 0}},
+    "y": {"field": "decade", "type": "nominal", "title": null},
+    "color": {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires", "scale": {"scheme": "yelloworangered"}},
+    "tooltip": [{"field": "decade", "type": "nominal", "title": "Decade"}, {"field": "month", "type": "nominal", "title": "Month"}, {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires"}]
+  }
+}

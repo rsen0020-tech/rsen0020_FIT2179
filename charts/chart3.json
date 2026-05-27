@@ -1,64 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Matrix idiom (heatmap). Number of fires by month and year, showing seasonality. SAMPLE DATA - replace the values array with counts derived from real incident data.",
-  "title": {
-    "text": "When do fires occur?",
-    "subtitle": "SAMPLE DATA - fires by month and season",
-    "subtitleColor": "#b34700",
-    "anchor": "start",
-    "fontSize": 16
-  },
+  "description": "Top 15 local government areas by number of at-risk education facilities. Source: BARR register (data.vic.gov.au).",
+  "title": {"text": "Top 15 LGAs by at-risk facilities", "anchor": "start", "fontSize": 15},
   "width": "container",
-  "height": 240,
+  "height": 380,
   "autosize": {"type": "fit", "contains": "padding"},
-  "data": {
-    "values": [
-      {"year": 2019, "month": "Oct", "fires": 8},
-      {"year": 2019, "month": "Nov", "fires": 15},
-      {"year": 2019, "month": "Dec", "fires": 60},
-      {"year": 2019, "month": "Jan", "fires": 70},
-      {"year": 2019, "month": "Feb", "fires": 30},
-      {"year": 2019, "month": "Mar", "fires": 12},
-      {"year": 2020, "month": "Oct", "fires": 6},
-      {"year": 2020, "month": "Nov", "fires": 10},
-      {"year": 2020, "month": "Dec", "fires": 22},
-      {"year": 2020, "month": "Jan", "fires": 28},
-      {"year": 2020, "month": "Feb", "fires": 18},
-      {"year": 2020, "month": "Mar", "fires": 9},
-      {"year": 2021, "month": "Oct", "fires": 5},
-      {"year": 2021, "month": "Nov", "fires": 9},
-      {"year": 2021, "month": "Dec", "fires": 25},
-      {"year": 2021, "month": "Jan", "fires": 30},
-      {"year": 2021, "month": "Feb", "fires": 20},
-      {"year": 2021, "month": "Mar", "fires": 8},
-      {"year": 2022, "month": "Oct", "fires": 7},
-      {"year": 2022, "month": "Nov", "fires": 12},
-      {"year": 2022, "month": "Dec", "fires": 28},
-      {"year": 2022, "month": "Jan", "fires": 33},
-      {"year": 2022, "month": "Feb", "fires": 22},
-      {"year": 2022, "month": "Mar", "fires": 10}
-    ]
-  },
-  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/barr_by_lga.csv"},
+  "transform": [
+    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "n", "order": "descending"}]},
+    {"filter": "datum.rank <= 15"}
+  ],
+  "mark": {"type": "bar", "color": "#b34700"},
   "encoding": {
-    "x": {
-      "field": "month",
-      "type": "ordinal",
-      "title": "Month",
-      "sort": ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
-      "axis": {"labelAngle": 0}
-    },
-    "y": {"field": "year", "type": "ordinal", "title": "Season starting"},
-    "color": {
-      "field": "fires",
-      "type": "quantitative",
-      "title": "Number of fires",
-      "scale": {"scheme": "yelloworangered"}
-    },
-    "tooltip": [
-      {"field": "year", "type": "ordinal", "title": "Season"},
-      {"field": "month", "type": "ordinal", "title": "Month"},
-      {"field": "fires", "type": "quantitative", "title": "Fires"}
-    ]
+    "y": {"field": "lga_name", "type": "nominal", "title": null, "sort": "-x"},
+    "x": {"field": "n", "type": "quantitative", "title": "At-risk facilities"},
+    "tooltip": [{"field": "lga_name", "type": "nominal", "title": "LGA"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
   }
 }

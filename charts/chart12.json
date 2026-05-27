@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "The 15 largest individual Victorian bushfire footprints on record. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "title": {"text": "Victoria's largest recorded bushfires", "subtitle": "Single fire footprints, hectares", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "width": "container",
+  "height": 380,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/hist_top_fires.csv"},
+  "transform": [{"calculate": "datum.fire_name + ' (' + datum.year + ')'", "as": "label"}],
+  "mark": {"type": "bar", "color": "#b34700"},
+  "encoding": {
+    "y": {"field": "label", "type": "nominal", "title": null, "sort": "-x"},
+    "x": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)"},
+    "tooltip": [{"field": "fire_name", "type": "nominal", "title": "Fire"}, {"field": "year", "type": "quantitative", "title": "Year", "format": "d"}, {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}]
+  }
+}

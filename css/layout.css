@@ -40,21 +40,6 @@ h2 {
 
 p { max-width: 68ch; }
 
-/* SAMPLE-DATA warning bar - delete the .banner element once real data is in */
-.banner {
-  background: #fff3e6;
-  border-bottom: 2px solid var(--flame);
-  color: #7a3300;
-  padding: 10px 24px;
-  font-size: 0.95rem;
-  text-align: center;
-}
-.banner code {
-  background: #ffe3c7;
-  padding: 1px 5px;
-  border-radius: 3px;
-}
-
 .hero {
   background: linear-gradient(180deg, #ffffff, transparent);
   padding: 44px 0 8px;
@@ -86,18 +71,6 @@ section { margin: 8px 0 24px; }
   max-width: none;
 }
 
-/* Placeholder cards for charts you still need to build */
-.chart-stub {
-  background: repeating-linear-gradient(45deg, #fbf7f1, #fbf7f1 10px, #f3ece1 10px, #f3ece1 20px);
-  border: 1px dashed var(--flame);
-  border-radius: 10px;
-  padding: 22px;
-  margin: 10px 0;
-  color: #8a5a33;
-  font-size: 0.92rem;
-}
-.chart-stub strong { color: var(--ember); }
-
 footer {
   margin-top: 40px;
   padding: 24px 0 60px;
@@ -107,6 +80,8 @@ footer {
 }
 footer h2 { font-size: 1.3rem; }
 footer ul { max-width: 68ch; }
+footer a { color: var(--ember); }
+.note { font-size: 0.85rem; }
 .ack { font-style: italic; }
 
 @media (max-width: 480px) {

@@ -1,45 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bivariate idiom (scatter) that COMBINES TWO SOURCES: Bureau of Meteorology summer temperature and DEECA area burnt. This pattern satisfies the 'combine data from two different sources' requirement. SAMPLE DATA - replace the values array.",
-  "title": {
-    "text": "Hotter summers, bigger fires",
-    "subtitle": "SAMPLE DATA - BoM mean summer max temp vs DEECA area burnt",
-    "subtitleColor": "#b34700",
-    "anchor": "start",
-    "fontSize": 16
-  },
+  "description": "Number of at-risk facilities in each BARR bushfire risk category. Source: BARR register (data.vic.gov.au).",
+  "title": {"text": "Facilities by bushfire risk category", "subtitle": "Risk tiers assigned in the register; Category 1 facilities face the highest risk", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
   "width": "container",
-  "height": 320,
+  "height": 240,
   "autosize": {"type": "fit", "contains": "padding"},
-  "data": {
-    "values": [
-      {"year": 2009, "mean_max_temp": 24.2, "area_burnt_ha": 430000},
-      {"year": 2020, "mean_max_temp": 23.8, "area_burnt_ha": 390000},
-      {"year": 2006, "mean_max_temp": 23.1, "area_burnt_ha": 160000},
-      {"year": 2018, "mean_max_temp": 22.7, "area_burnt_ha": 130000},
-      {"year": 2013, "mean_max_temp": 22.5, "area_burnt_ha": 120000},
-      {"year": 2014, "mean_max_temp": 22.3, "area_burnt_ha": 110000},
-      {"year": 2016, "mean_max_temp": 21.9, "area_burnt_ha": 95000},
-      {"year": 2024, "mean_max_temp": 22.0, "area_burnt_ha": 90000},
-      {"year": 2008, "mean_max_temp": 21.2, "area_burnt_ha": 60000},
-      {"year": 2021, "mean_max_temp": 21.0, "area_burnt_ha": 60000},
-      {"year": 2022, "mean_max_temp": 20.9, "area_burnt_ha": 45000},
-      {"year": 2011, "mean_max_temp": 20.6, "area_burnt_ha": 40000}
-    ]
-  },
-  "mark": {"type": "point", "filled": true, "size": 110, "color": "#b34700", "opacity": 0.8},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/barr_by_category.csv"},
   "encoding": {
-    "x": {
-      "field": "mean_max_temp",
-      "type": "quantitative",
-      "title": "Mean summer max temperature (°C)",
-      "scale": {"zero": false}
-    },
-    "y": {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (hectares)"},
-    "tooltip": [
-      {"field": "year", "type": "ordinal", "title": "Season"},
-      {"field": "mean_max_temp", "type": "quantitative", "title": "Mean max temp (°C)"},
-      {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (ha)", "format": ","}
-    ]
-  }
+    "x": {"field": "category", "type": "nominal", "title": null, "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"], "axis": {"labelAngle": 0}},
+    "y": {"field": "n", "type": "quantitative", "title": "Facilities"}
+  },
+  "layer": [
+    {"mark": {"type": "bar", "color": "#b34700"}},
+    {"mark": {"type": "text", "dy": -7, "color": "#2b2b2b"}, "encoding": {"text": {"field": "n", "type": "quantitative"}}}
+  ]
 }

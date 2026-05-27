@@ -1,0 +1,15 @@
+sector,category,n
+Catholic,CAT 2,2
+Catholic,CAT 3,32
+Early Childhood Services,CAT 0,2
+Early Childhood Services,CAT 1,8
+Early Childhood Services,CAT 2,47
+Early Childhood Services,CAT 3,417
+Government,CAT 0,3
+Government,CAT 1,14
+Government,CAT 2,64
+Government,CAT 3,250
+Independent,CAT 1,2
+Independent,CAT 2,7
+Independent,CAT 3,47
+Other,CAT 3,1

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Distribution of Victorian bushfire sizes, binned by hectares on a logarithmic scale of classes. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "title": {"text": "Most bushfires are small — a few are enormous", "subtitle": "Number of Victorian bushfires by size class (hectares)", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "width": "container",
+  "height": 280,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/hist_size_hist.csv"},
+  "transform": [{"filter": "datum.n_fires > 0"}],
+  "mark": {"type": "bar", "color": "#b34700"},
+  "encoding": {
+    "x": {"field": "size_class_ha", "type": "nominal", "title": "Fire size (hectares)", "sort": ["0–1", "1–10", "10–100", "100–1k", "1k–10k", "10k–100k", "100k+"], "axis": {"labelAngle": 0}},
+    "y": {"field": "n_fires", "type": "quantitative", "title": "Number of bushfires"},
+    "tooltip": [{"field": "size_class_ha", "type": "nominal", "title": "Size (ha)"}, {"field": "n_fires", "type": "quantitative", "title": "Bushfires"}]
+  }
+}

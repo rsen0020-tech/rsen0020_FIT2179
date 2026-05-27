@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Area burnt per decade, split into bushfire and prescribed (planned) burning. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "title": {"text": "Area burnt by decade", "subtitle": "Bushfire vs planned (prescribed) burning", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/hist_decade_type.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {"field": "decade", "type": "nominal", "title": null, "axis": {"labelAngle": 0}},
+    "y": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)", "stack": "zero"},
+    "color": {"field": "fire_type", "type": "nominal", "title": "Fire type", "scale": {"domain": ["Bushfire", "Prescribed Burn"], "range": ["#b34700", "#5b8c5a"]}},
+    "tooltip": [{"field": "decade", "type": "nominal", "title": "Decade"}, {"field": "fire_type", "type": "nominal", "title": "Type"}, {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}]
+  }
+}

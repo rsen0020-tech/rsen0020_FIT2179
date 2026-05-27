@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap of at-risk facility counts by fire weather district and risk category. Source: BARR register (data.vic.gov.au).",
+  "title": {"text": "Risk category mix across districts", "anchor": "start", "fontSize": 15},
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/barr_district_category.csv"},
+  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "x": {"field": "category", "type": "nominal", "title": null, "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"], "axis": {"labelAngle": 0}},
+    "y": {"field": "district", "type": "nominal", "title": null, "sort": {"field": "n", "op": "sum", "order": "descending"}},
+    "color": {"field": "n", "type": "quantitative", "title": "Facilities", "scale": {"scheme": "yelloworangered"}},
+    "tooltip": [{"field": "district", "type": "nominal", "title": "District"}, {"field": "category", "type": "nominal", "title": "Category"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
+  }
+}

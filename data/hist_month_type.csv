@@ -1,0 +1,25 @@
+month,fire_type,area_ha,n_fires
+Jan,Bushfire,16298380.0,5247
+Jan,Prescribed Burn,2791109.0,10668
+Feb,Bushfire,3492370.0,1022
+Feb,Prescribed Burn,60427.0,1627
+Mar,Bushfire,83335.0,432
+Mar,Prescribed Burn,346341.0,6140
+Apr,Bushfire,100300.0,179
+Apr,Prescribed Burn,683975.0,30250
+May,Bushfire,2355.0,61
+May,Prescribed Burn,177108.0,12598
+Jun,Bushfire,166.0,9
+Jun,Prescribed Burn,21253.0,299
+Jul,Bushfire,962.0,23
+Jul,Prescribed Burn,20056.0,169
+Aug,Bushfire,5859.0,37
+Aug,Prescribed Burn,22055.0,2963
+Sep,Bushfire,49466.0,131
+Sep,Prescribed Burn,40619.0,1279
+Oct,Bushfire,37280.0,181
+Oct,Prescribed Burn,83664.0,1063
+Nov,Bushfire,479940.0,713
+Nov,Prescribed Burn,37688.0,673
+Dec,Bushfire,7785830.0,1095
+Dec,Prescribed Burn,62812.0,317
