@@ -1,1 +1,1 @@
-vegaEmbed("#map", "js/choropleth.json");
+vegaEmbed('#map', "charts/chart1.json").then(function(result) {}).catch(console.error);
