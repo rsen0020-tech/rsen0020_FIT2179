@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Number of fires by month, grouped by fire type. Shows bushfires peak in summer while prescribed burns peak in autumn and spring. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "title": {"text": "When fires happen", "subtitle": "Bushfires peak in summer; planned burns in autumn and spring", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/hist_month_type.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {"field": "month", "type": "nominal", "title": null, "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "axis": {"labelAngle": 0}},
+    "xOffset": {"field": "fire_type"},
+    "y": {"field": "n_fires", "type": "quantitative", "title": "Number of fires"},
+    "color": {"field": "fire_type", "type": "nominal", "title": "Fire type", "scale": {"domain": ["Bushfire", "Prescribed Burn"], "range": ["#b34700", "#5b8c5a"]}},
+    "tooltip": [{"field": "month", "type": "nominal", "title": "Month"}, {"field": "fire_type", "type": "nominal", "title": "Type"}, {"field": "n_fires", "type": "quantitative", "title": "Fires"}]
+  }
+}

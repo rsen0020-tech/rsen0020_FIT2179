@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked bar of risk categories within each education sector. Source: BARR register (data.vic.gov.au).",
+  "title": {"text": "Risk categories by education sector", "anchor": "start", "fontSize": 15},
+  "width": "container",
+  "height": 260,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "config": {"font": "Source Sans 3, sans-serif"},
+  "data": {"url": "data/barr_sector_category.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "y": {"field": "sector", "type": "nominal", "title": null, "sort": {"field": "n", "op": "sum", "order": "descending"}},
+    "x": {"field": "n", "type": "quantitative", "title": "Facilities", "stack": "zero"},
+    "color": {"field": "category", "type": "nominal", "title": "Risk category", "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"], "scale": {"scheme": "oranges"}},
+    "tooltip": [{"field": "sector", "type": "nominal", "title": "Sector"}, {"field": "category", "type": "nominal", "title": "Category"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
+  }
+}

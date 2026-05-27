@@ -1,46 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "REQUIRED MAP. Choropleth of area burnt by Victorian Local Government Area. Uses an equal-area projection (conicEqualArea) so colour intensity can be compared fairly across regions of different size. SAMPLE DATA - swap data/LGA_VIC.topojson and data/burnt_area_by_lga.csv for real DEECA fire-history figures.",
-  "title": {
-    "text": "Area burnt by Local Government Area",
-    "subtitle": "SAMPLE DATA - replace files in /data with real Victorian fire-history data",
-    "subtitleColor": "#b34700",
-    "anchor": "start",
-    "fontSize": 16
-  },
+  "description": "REQUIRED MAP. Choropleth of bushfire at-risk education facilities per Victorian LGA. Source: BARR register (data.vic.gov.au) joined to ABS LGA boundaries (GeoJSON). Equal-area projection (conicEqualArea) so colour can be compared fairly across LGAs of different size.",
+  "title": {"text": "Where Victoria's at-risk schools are", "subtitle": "Bushfire at-risk education facilities by local government area, 2025–26", "anchor": "start", "fontSize": 17, "subtitleColor": "#6b6b6b", "subtitleFontSize": 12},
   "width": "container",
-  "height": 420,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "projection": {
-    "type": "conicEqualArea",
-    "rotate": [-145, 0, 0],
-    "parallels": [-36, -38]
-  },
-  "data": {
-    "url": "data/LGA_VIC.topojson",
-    "format": {"type": "topojson", "feature": "lga"}
-  },
+  "height": 460,
+  "config": {"font": "Source Sans 3, sans-serif", "view": {"stroke": null}},
+  "projection": {"type": "conicEqualArea", "center": [0, -36.5], "rotate": [-145, 0, 0], "parallels": [-36, -38]},
+  "data": {"url": "data/LGA_VIC.geojson", "format": {"type": "json", "property": "features"}},
   "transform": [
-    {
-      "lookup": "properties.lga_name",
-      "from": {
-        "data": {"url": "data/burnt_area_by_lga.csv"},
-        "key": "lga_name",
-        "fields": ["area_burnt_ha"]
-      }
-    }
+    {"lookup": "properties.lga_name", "from": {"data": {"url": "data/barr_by_lga.csv"}, "key": "lga_name", "fields": ["n"]}},
+    {"calculate": "isValid(datum.n) ? datum.n : 0", "as": "facilities"}
   ],
-  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.6},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
   "encoding": {
-    "color": {
-      "field": "area_burnt_ha",
-      "type": "quantitative",
-      "title": "Area burnt (ha)",
-      "scale": {"scheme": "yelloworangered"}
-    },
+    "color": {"field": "facilities", "type": "quantitative", "title": "At-risk facilities", "scale": {"scheme": "yelloworangered"}, "legend": {"orient": "top-left"}},
     "tooltip": [
       {"field": "properties.lga_name", "type": "nominal", "title": "LGA"},
-      {"field": "area_burnt_ha", "type": "quantitative", "title": "Area burnt (ha)", "format": ","}
+      {"field": "facilities", "type": "quantitative", "title": "At-risk facilities"}
     ]
   }
 }
