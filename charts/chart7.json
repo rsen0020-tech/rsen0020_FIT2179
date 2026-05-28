@@ -1,36 +1,169 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Area burnt in Victoria each year by fire type, with major fire seasons labelled. Source: Historical Bushfire Boundaries v2.0. Area is the sum of recorded fire footprints and may include areas counted more than once.",
-  "title": {"text": "Area burnt in Victoria each year", "subtitle": "Sum of recorded fire footprints (hectares), 1950–2023", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "title": {
+    "text": "Area burnt in Victoria each year",
+    "subtitle": "Sum of recorded fire footprints (hectares), 1950\u20132023",
+    "anchor": "start",
+    "fontSize": 19,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 320,
-  "config": {"font": "Source Sans 3, sans-serif"},
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
   "layer": [
     {
-      "data": {"url": "data/hist_year_type.csv"},
-      "mark": {"type": "line", "point": {"size": 16}},
+      "data": {
+        "url": "data/hist_year_type.csv"
+      },
+      "mark": {
+        "type": "line",
+        "point": {
+          "size": 16
+        }
+      },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative", "title": null, "axis": {"format": "d"}, "scale": {"domain": [1950, 2024]}},
-        "y": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)", "scale": {"domain": [0, 6000000]}},
-        "color": {"field": "fire_type", "type": "nominal", "title": "Fire type", "scale": {"domain": ["Bushfire", "Prescribed Burn"], "range": ["#b34700", "#5b8c5a"]}},
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "title": null,
+          "axis": {
+            "format": "d"
+          },
+          "scale": {
+            "domain": [
+              1950,
+              2024
+            ]
+          }
+        },
+        "y": {
+          "field": "area_ha",
+          "type": "quantitative",
+          "title": "Area burnt (ha)",
+          "scale": {
+            "domain": [
+              0,
+              6000000
+            ]
+          }
+        },
+        "color": {
+          "field": "fire_type",
+          "type": "nominal",
+          "title": "Fire type",
+          "scale": {
+            "domain": [
+              "Bushfire",
+              "Prescribed Burn"
+            ],
+            "range": [
+              "#b34700",
+              "#5b8c5a"
+            ]
+          }
+        },
         "tooltip": [
-          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
-          {"field": "fire_type", "type": "nominal", "title": "Type"},
-          {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "fire_type",
+            "type": "nominal",
+            "title": "Type"
+          },
+          {
+            "field": "area_ha",
+            "type": "quantitative",
+            "title": "Area (ha)",
+            "format": ","
+          }
         ]
       }
     },
     {
-      "data": {"values": [
-        {"year": 2003, "area_ha": 5406777, "label": "2003 alpine fires"},
-        {"year": 2019, "area_ha": 3314826, "label": "Black Summer"},
-        {"year": 2009, "area_ha": 2052579, "label": "Black Saturday"}
-      ]},
-      "mark": {"type": "text", "align": "right", "dx": -8, "dy": -4, "fontWeight": "bold", "fontSize": 11, "color": "#5a2600"},
+      "data": {
+        "values": [
+          {
+            "year": 2003,
+            "area_ha": 5406777,
+            "label": "2003 alpine fires"
+          },
+          {
+            "year": 2019,
+            "area_ha": 3314826,
+            "label": "Black Summer"
+          },
+          {
+            "year": 2009,
+            "area_ha": 2052579,
+            "label": "Black Saturday"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -8,
+        "dy": -4,
+        "fontWeight": "bold",
+        "fontSize": 11,
+        "color": "#5a2600"
+      },
       "encoding": {
-        "x": {"field": "year", "type": "quantitative", "scale": {"domain": [1950, 2024]}},
-        "y": {"field": "area_ha", "type": "quantitative"},
-        "text": {"field": "label", "type": "nominal"}
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1950,
+              2024
+            ]
+          }
+        },
+        "y": {
+          "field": "area_ha",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ]

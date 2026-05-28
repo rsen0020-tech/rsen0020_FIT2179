@@ -1,16 +1,77 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "At-risk education facilities by fire weather district. Source: BARR register (data.vic.gov.au).",
-  "title": {"text": "At-risk facilities by fire weather district", "anchor": "start", "fontSize": 15},
+  "title": {
+    "text": "At-risk facilities by fire weather district",
+    "anchor": "start",
+    "fontSize": 19,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "offset": 10
+  },
   "width": "container",
   "height": 280,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/barr_by_district.csv"},
-  "mark": {"type": "bar", "color": "#b34700"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/barr_by_district.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#b34700"
+  },
   "encoding": {
-    "y": {"field": "district", "type": "nominal", "title": null, "sort": "-x"},
-    "x": {"field": "n", "type": "quantitative", "title": "Facilities"},
-    "tooltip": [{"field": "district", "type": "nominal", "title": "District"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
+    "y": {
+      "field": "district",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "n",
+      "type": "quantitative",
+      "title": "Facilities"
+    },
+    "tooltip": [
+      {
+        "field": "district",
+        "type": "nominal",
+        "title": "District"
+      },
+      {
+        "field": "n",
+        "type": "quantitative",
+        "title": "Facilities"
+      }
+    ]
   }
 }

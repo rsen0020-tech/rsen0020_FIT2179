@@ -1,19 +1,113 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "The 15 largest individual Victorian bushfire footprints on record. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
-  "title": {"text": "Victoria's largest recorded bushfires", "subtitle": "Single fire footprints, hectares", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "title": {
+    "text": "Victoria's largest recorded bushfires",
+    "subtitle": "Single fire footprints, hectares",
+    "anchor": "start",
+    "fontSize": 19,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 380,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/hist_top_fires.csv"},
-  "transform": [{"calculate": "datum.fire_name + ' (' + datum.year + ')'", "as": "label"}],
-  "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover", "clear": "pointerout"}}],
-  "mark": {"type": "bar", "color": "#b34700"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/hist_top_fires.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.fire_name + ' (' + datum.year + ')'",
+      "as": "label"
+    }
+  ],
+  "params": [
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#b34700"
+  },
   "encoding": {
-    "y": {"field": "label", "type": "nominal", "title": null, "sort": "-x"},
-    "x": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)"},
-    "fillOpacity": {"condition": {"param": "hover", "empty": false, "value": 1}, "value": 0.85},
-    "tooltip": [{"field": "fire_name", "type": "nominal", "title": "Fire"}, {"field": "year", "type": "quantitative", "title": "Year", "format": "d"}, {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}]
+    "y": {
+      "field": "label",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "area_ha",
+      "type": "quantitative",
+      "title": "Area burnt (ha)"
+    },
+    "fillOpacity": {
+      "condition": {
+        "param": "hover",
+        "empty": false,
+        "value": 1
+      },
+      "value": 0.85
+    },
+    "tooltip": [
+      {
+        "field": "fire_name",
+        "type": "nominal",
+        "title": "Fire"
+      },
+      {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year",
+        "format": "d"
+      },
+      {
+        "field": "area_ha",
+        "type": "quantitative",
+        "title": "Area (ha)",
+        "format": ","
+      }
+    ]
   }
 }

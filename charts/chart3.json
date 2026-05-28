@@ -1,22 +1,114 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Top 15 local government areas by number of at-risk education facilities. Source: BARR register (data.vic.gov.au).",
-  "title": {"text": "Top 15 LGAs by at-risk facilities", "anchor": "start", "fontSize": 15},
+  "title": {
+    "text": "Top 15 LGAs by at-risk facilities",
+    "anchor": "start",
+    "fontSize": 19,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "offset": 10
+  },
   "width": "container",
   "height": 380,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/barr_by_lga.csv"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/barr_by_lga.csv"
+  },
   "transform": [
-    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "n", "order": "descending"}]},
-    {"filter": "datum.rank <= 15"}
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "n",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 15"
+    }
   ],
-  "params": [{"name": "hover", "select": {"type": "point", "on": "pointerover", "clear": "pointerout"}}],
-  "mark": {"type": "bar", "color": "#b34700"},
+  "params": [
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#b34700"
+  },
   "encoding": {
-    "y": {"field": "lga_name", "type": "nominal", "title": null, "sort": "-x"},
-    "x": {"field": "n", "type": "quantitative", "title": "At-risk facilities"},
-    "fillOpacity": {"condition": {"param": "hover", "empty": false, "value": 1}, "value": 0.85},
-    "tooltip": [{"field": "lga_name", "type": "nominal", "title": "LGA"}, {"field": "n", "type": "quantitative", "title": "Facilities"}]
+    "y": {
+      "field": "lga_name",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "n",
+      "type": "quantitative",
+      "title": "At-risk facilities"
+    },
+    "fillOpacity": {
+      "condition": {
+        "param": "hover",
+        "empty": false,
+        "value": 1
+      },
+      "value": 0.85
+    },
+    "tooltip": [
+      {
+        "field": "lga_name",
+        "type": "nominal",
+        "title": "LGA"
+      },
+      {
+        "field": "n",
+        "type": "quantitative",
+        "title": "Facilities"
+      }
+    ]
   }
 }
