@@ -1,17 +1,112 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Heatmap of bushfire counts by month and decade, showing how the summer fire season has persisted over time. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
-  "title": {"text": "Bushfire timing across the decades", "subtitle": "Number of bushfires by month", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "title": {
+    "text": "Bushfire timing across the decades",
+    "subtitle": "Number of bushfires by month",
+    "anchor": "start",
+    "fontSize": 19,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 320,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/hist_decade_month_bushfire.csv"},
-  "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/hist_decade_month_bushfire.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
   "encoding": {
-    "x": {"field": "month", "type": "nominal", "title": null, "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "axis": {"labelAngle": 0}},
-    "y": {"field": "decade", "type": "nominal", "title": null},
-    "color": {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires", "scale": {"scheme": "yelloworangered"}},
-    "tooltip": [{"field": "decade", "type": "nominal", "title": "Decade"}, {"field": "month", "type": "nominal", "title": "Month"}, {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires"}]
+    "x": {
+      "field": "month",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "decade",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "n_bushfires",
+      "type": "quantitative",
+      "title": "Bushfires",
+      "scale": {
+        "scheme": "yelloworangered"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "decade",
+        "type": "nominal",
+        "title": "Decade"
+      },
+      {
+        "field": "month",
+        "type": "nominal",
+        "title": "Month"
+      },
+      {
+        "field": "n_bushfires",
+        "type": "quantitative",
+        "title": "Bushfires"
+      }
+    ]
   }
 }

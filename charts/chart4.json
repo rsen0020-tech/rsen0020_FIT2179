@@ -1,18 +1,95 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Number of at-risk facilities in each BARR bushfire risk category. Source: BARR register (data.vic.gov.au).",
-  "title": {"text": "Facilities by bushfire risk category", "subtitle": "Risk tiers assigned in the register; Category 1 facilities face the highest risk", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "title": {
+    "text": "Facilities by bushfire risk category",
+    "subtitle": "Risk tiers assigned in the register; Category 1 facilities face the highest risk",
+    "anchor": "start",
+    "fontSize": 19,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 240,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/barr_by_category.csv"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/barr_by_category.csv"
+  },
   "encoding": {
-    "x": {"field": "category", "type": "nominal", "title": null, "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"], "axis": {"labelAngle": 0}},
-    "y": {"field": "n", "type": "quantitative", "title": "Facilities"}
+    "x": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "CAT 0",
+        "CAT 1",
+        "CAT 2",
+        "CAT 3"
+      ],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "n",
+      "type": "quantitative",
+      "title": "Facilities"
+    }
   },
   "layer": [
-    {"mark": {"type": "bar", "color": "#b34700"}},
-    {"mark": {"type": "text", "dy": -7, "color": "#2b2b2b"}, "encoding": {"text": {"field": "n", "type": "quantitative"}}}
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#b34700"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -7,
+        "color": "#2b2b2b"
+      },
+      "encoding": {
+        "text": {
+          "field": "n",
+          "type": "quantitative"
+        }
+      }
+    }
   ]
 }

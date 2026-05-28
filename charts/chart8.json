@@ -1,17 +1,105 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Area burnt per decade, split into bushfire and prescribed (planned) burning. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
-  "title": {"text": "Area burnt by decade", "subtitle": "Bushfire vs planned (prescribed) burning", "anchor": "start", "fontSize": 15, "subtitleColor": "#6b6b6b", "subtitleFontSize": 11},
+  "title": {
+    "text": "Area burnt by decade",
+    "subtitle": "Bushfire vs planned (prescribed) burning",
+    "anchor": "start",
+    "fontSize": 19,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 300,
-  "autosize": {"type": "fit", "contains": "padding"},
-  "config": {"font": "Source Sans 3, sans-serif"},
-  "data": {"url": "data/hist_decade_type.csv"},
-  "mark": {"type": "bar"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "data": {
+    "url": "data/hist_decade_type.csv"
+  },
+  "mark": {
+    "type": "bar"
+  },
   "encoding": {
-    "x": {"field": "decade", "type": "nominal", "title": null, "axis": {"labelAngle": 0}},
-    "y": {"field": "area_ha", "type": "quantitative", "title": "Area burnt (ha)", "stack": "zero"},
-    "color": {"field": "fire_type", "type": "nominal", "title": "Fire type", "scale": {"domain": ["Bushfire", "Prescribed Burn"], "range": ["#b34700", "#5b8c5a"]}},
-    "tooltip": [{"field": "decade", "type": "nominal", "title": "Decade"}, {"field": "fire_type", "type": "nominal", "title": "Type"}, {"field": "area_ha", "type": "quantitative", "title": "Area (ha)", "format": ","}]
+    "x": {
+      "field": "decade",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "area_ha",
+      "type": "quantitative",
+      "title": "Area burnt (ha)",
+      "stack": "zero"
+    },
+    "color": {
+      "field": "fire_type",
+      "type": "nominal",
+      "title": "Fire type",
+      "scale": {
+        "domain": [
+          "Bushfire",
+          "Prescribed Burn"
+        ],
+        "range": [
+          "#b34700",
+          "#5b8c5a"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "decade",
+        "type": "nominal",
+        "title": "Decade"
+      },
+      {
+        "field": "fire_type",
+        "type": "nominal",
+        "title": "Type"
+      },
+      {
+        "field": "area_ha",
+        "type": "quantitative",
+        "title": "Area (ha)",
+        "format": ","
+      }
+    ]
   }
 }

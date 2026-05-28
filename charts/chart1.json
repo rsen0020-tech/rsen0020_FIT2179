@@ -1,27 +1,150 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Choropleth of bushfire at-risk education facilities per Victorian local government area, combining the BARR register with ABS LGA boundaries. Uses an equal-area projection so colour can be compared fairly across areas of different size.",
-  "title": {"text": "Where Victoria's at-risk schools are", "subtitle": "Bushfire at-risk education facilities by local government area, 2025–26", "anchor": "start", "fontSize": 17, "subtitleColor": "#6b6b6b", "subtitleFontSize": 12},
+  "title": {
+    "text": "Where Victoria's at-risk schools are",
+    "subtitle": "Bushfire at-risk education facilities by local government area, 2025\u201326",
+    "anchor": "start",
+    "fontSize": 22,
+    "subtitleColor": "#6b625a",
+    "subtitleFontSize": 14,
+    "font": "Source Serif 4, Georgia, serif",
+    "fontWeight": 600,
+    "color": "#211c19",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontStyle": "italic",
+    "offset": 10
+  },
   "width": "container",
   "height": 460,
-  "config": {"font": "Source Sans 3, sans-serif", "view": {"stroke": null}},
-  "projection": {"type": "conicEqualArea", "center": [0, -36.5], "rotate": [-145, 0, 0], "parallels": [-36, -38]},
-  "data": {"url": "data/LGA_VIC.geojson", "format": {"type": "json", "property": "features"}},
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "view": {
+      "stroke": null
+    },
+    "padding": 5,
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 8,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 80
+    }
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "center": [
+      0,
+      -36.5
+    ],
+    "rotate": [
+      -145,
+      0,
+      0
+    ],
+    "parallels": [
+      -36,
+      -38
+    ]
+  },
+  "data": {
+    "url": "data/LGA_VIC.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
   "transform": [
-    {"lookup": "properties.lga_name", "from": {"data": {"url": "data/barr_by_lga.csv"}, "key": "lga_name", "fields": ["n"]}},
-    {"calculate": "isValid(datum.n) ? datum.n : 0", "as": "facilities"}
+    {
+      "lookup": "properties.lga_name",
+      "from": {
+        "data": {
+          "url": "data/barr_by_lga.csv"
+        },
+        "key": "lga_name",
+        "fields": [
+          "n"
+        ]
+      }
+    },
+    {
+      "calculate": "isValid(datum.n) ? datum.n : 0",
+      "as": "facilities"
+    }
   ],
   "params": [
-    {"name": "hover", "select": {"type": "point", "on": "pointerover", "clear": "pointerout", "fields": ["properties.lga_name"]}}
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "on": "pointerover",
+        "clear": "pointerout",
+        "fields": [
+          "properties.lga_name"
+        ]
+      }
+    }
   ],
-  "mark": {"type": "geoshape"},
+  "mark": {
+    "type": "geoshape"
+  },
   "encoding": {
-    "color": {"field": "facilities", "type": "quantitative", "title": "At-risk facilities", "scale": {"scheme": "yelloworangered"}, "legend": {"orient": "top", "direction": "horizontal", "gradientLength": 200, "titleColor": "#241f1c", "labelColor": "#241f1c", "titleFontSize": 11, "labelFontSize": 10}},
-    "stroke": {"condition": {"param": "hover", "empty": false, "value": "#2b2b2b"}, "value": "white"},
-    "strokeWidth": {"condition": {"param": "hover", "empty": false, "value": 2}, "value": 0.5},
+    "color": {
+      "field": "facilities",
+      "type": "quantitative",
+      "title": "At-risk facilities",
+      "scale": {
+        "scheme": "yelloworangered"
+      },
+      "legend": {
+        "orient": "top",
+        "direction": "horizontal",
+        "gradientLength": 200,
+        "titleColor": "#241f1c",
+        "labelColor": "#241f1c",
+        "titleFontSize": 11,
+        "labelFontSize": 10
+      }
+    },
+    "stroke": {
+      "condition": {
+        "param": "hover",
+        "empty": false,
+        "value": "#2b2b2b"
+      },
+      "value": "white"
+    },
+    "strokeWidth": {
+      "condition": {
+        "param": "hover",
+        "empty": false,
+        "value": 2
+      },
+      "value": 0.5
+    },
     "tooltip": [
-      {"field": "properties.lga_name", "type": "nominal", "title": "LGA"},
-      {"field": "facilities", "type": "quantitative", "title": "At-risk facilities"}
+      {
+        "field": "properties.lga_name",
+        "type": "nominal",
+        "title": "LGA"
+      },
+      {
+        "field": "facilities",
+        "type": "quantitative",
+        "title": "At-risk facilities"
+      }
     ]
   }
 }
