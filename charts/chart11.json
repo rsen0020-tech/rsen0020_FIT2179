@@ -2,97 +2,149 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Distribution of Victorian bushfire sizes, binned by hectares on a logarithmic scale of classes. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
-    "text": "Most bushfires are small \u2014 a few are enormous",
+    "text": "Most bushfires are small",
     "subtitle": "Number of bushfires by size class",
     "anchor": "start",
-    "fontSize": 22,
-    "subtitleColor": "#6b625a",
-    "subtitleFontSize": 15,
-    "font": "Source Serif 4, Georgia, serif",
-    "fontWeight": 600,
+    "offset": 14,
+    "fontSize": 26,
+    "fontWeight": 700,
     "color": "#211c19",
+    "font": "Newsreader, Source Serif 4, Georgia, serif",
+    "subtitleFontSize": 17,
+    "subtitleColor": "#6b625a",
     "subtitleFont": "Source Sans 3, sans-serif",
-    "subtitleFontStyle": "italic",
-    "offset": 12
+    "subtitleFontStyle": "italic"
   },
   "width": "container",
-  "height": 280,
+  "height": 320,
   "autosize": {
     "type": "fit",
     "contains": "padding"
   },
   "config": {
     "font": "Source Sans 3, sans-serif",
-    "padding": 8,
+    "padding": 10,
     "axis": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
+      "labelFontSize": 15,
+      "titleFontSize": 16,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 10,
+      "titlePadding": 12,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
+      "labelFontSize": 15,
+      "titleFontSize": 16,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 100
+      "symbolSize": 120
     },
     "view": {
       "stroke": null
     }
   },
-  "data": {
-    "url": "data/hist_size_hist.csv"
-  },
-  "transform": [
+  "layer": [
     {
-      "filter": "datum.n_fires > 0"
-    }
-  ],
-  "mark": {
-    "type": "bar",
-    "color": "#b34700"
-  },
-  "encoding": {
-    "x": {
-      "field": "size_class_ha",
-      "type": "nominal",
-      "title": "Fire size (hectares)",
-      "sort": [
-        "0\u20131",
-        "1\u201310",
-        "10\u2013100",
-        "100\u20131k",
-        "1k\u201310k",
-        "10k\u2013100k",
-        "100k+"
-      ],
-      "axis": {
-        "labelAngle": 0
-      }
-    },
-    "y": {
-      "field": "n_fires",
-      "type": "quantitative",
-      "title": "Number of bushfires"
-    },
-    "tooltip": [
-      {
-        "field": "size_class_ha",
-        "type": "nominal",
-        "title": "Size (ha)"
+      "data": {
+        "url": "data/hist_size_hist.csv"
       },
-      {
-        "field": "n_fires",
-        "type": "quantitative",
-        "title": "Bushfires"
+      "transform": [
+        {
+          "filter": "datum.n_fires > 0"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "#b34700"
+      },
+      "encoding": {
+        "x": {
+          "field": "size_class_ha",
+          "type": "nominal",
+          "title": "Fire size (hectares)",
+          "sort": [
+            "0\u20131",
+            "1\u201310",
+            "10\u2013100",
+            "100\u20131k",
+            "1k\u201310k",
+            "10k\u2013100k",
+            "100k+"
+          ],
+          "axis": {
+            "labelAngle": -25,
+            "labelFontSize": 13
+          }
+        },
+        "y": {
+          "field": "n_fires",
+          "type": "quantitative",
+          "title": "Number of bushfires"
+        },
+        "tooltip": [
+          {
+            "field": "size_class_ha",
+            "type": "nominal",
+            "title": "Size (ha)"
+          },
+          {
+            "field": "n_fires",
+            "type": "quantitative",
+            "title": "Bushfires"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "size_class_ha": "1\u201310",
+            "n_fires": 2627,
+            "label": "Most fires burn \u2264 10 ha"
+          },
+          {
+            "size_class_ha": "100k+",
+            "n_fires": 53,
+            "label": "Only 53 reached 100,000+ ha"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#5a2600",
+        "dy": -10,
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "size_class_ha",
+          "type": "nominal",
+          "sort": [
+            "0\u20131",
+            "1\u201310",
+            "10\u2013100",
+            "100\u20131k",
+            "1k\u201310k",
+            "10k\u2013100k",
+            "100k+"
+          ]
+        },
+        "y": {
+          "field": "n_fires",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
 }

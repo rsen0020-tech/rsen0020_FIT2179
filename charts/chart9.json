@@ -1,120 +1,45 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Number of fires by month, grouped by fire type. Shows bushfires peak in summer while prescribed burns peak in autumn and spring. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "description": "Number of fires by month, grouped by fire type. Click a series in the legend to isolate it. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
     "text": "When fires happen",
     "subtitle": "Two seasonal rhythms side by side",
     "anchor": "start",
-    "fontSize": 22,
-    "subtitleColor": "#6b625a",
-    "subtitleFontSize": 15,
-    "font": "Source Serif 4, Georgia, serif",
-    "fontWeight": 600,
+    "offset": 14,
+    "fontSize": 26,
+    "fontWeight": 700,
     "color": "#211c19",
+    "font": "Newsreader, Source Serif 4, Georgia, serif",
+    "subtitleFontSize": 17,
+    "subtitleColor": "#6b625a",
     "subtitleFont": "Source Sans 3, sans-serif",
-    "subtitleFontStyle": "italic",
-    "offset": 12
+    "subtitleFontStyle": "italic"
   },
   "width": "container",
-  "height": 300,
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
+  "height": 320,
+  "autosize": {"type": "fit", "contains": "padding"},
   "config": {
     "font": "Source Sans 3, sans-serif",
-    "padding": 8,
-    "axis": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "titlePadding": 10,
-      "domainColor": "#c9c0b3",
-      "tickColor": "#c9c0b3",
-      "gridColor": "#eee8dc"
-    },
-    "legend": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "symbolSize": 100
-    },
-    "view": {
-      "stroke": null
-    }
+    "padding": 10,
+    "axis": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "titlePadding": 12, "domainColor": "#c9c0b3", "tickColor": "#c9c0b3", "gridColor": "#eee8dc"},
+    "legend": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "symbolSize": 120},
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/hist_month_type.csv"
-  },
-  "mark": {
-    "type": "bar"
-  },
+  "data": {"url": "data/hist_month_type.csv"},
+  "params": [
+    {"name": "fireSel", "select": {"type": "point", "fields": ["fire_type"]}, "bind": "legend"}
+  ],
+  "mark": {"type": "bar"},
   "encoding": {
-    "x": {
-      "field": "month",
-      "type": "nominal",
-      "title": null,
-      "sort": [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "axis": {
-        "labelAngle": 0
-      }
-    },
-    "xOffset": {
-      "field": "fire_type"
-    },
-    "y": {
-      "field": "n_fires",
-      "type": "quantitative",
-      "title": "Number of fires"
-    },
-    "color": {
-      "field": "fire_type",
-      "type": "nominal",
-      "title": "Fire type",
-      "scale": {
-        "domain": [
-          "Bushfire",
-          "Prescribed Burn"
-        ],
-        "range": [
-          "#b34700",
-          "#5b8c5a"
-        ]
-      }
-    },
+    "x": {"field": "month", "type": "nominal", "title": null, "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "axis": {"labelAngle": 0}},
+    "xOffset": {"field": "fire_type"},
+    "y": {"field": "n_fires", "type": "quantitative", "title": "Number of fires"},
+    "color": {"field": "fire_type", "type": "nominal", "title": "Fire type", "scale": {"domain": ["Bushfire", "Prescribed Burn"], "range": ["#b34700", "#5b8c5a"]}},
+    "opacity": {"condition": {"param": "fireSel", "value": 1}, "value": 0.2},
     "tooltip": [
-      {
-        "field": "month",
-        "type": "nominal",
-        "title": "Month"
-      },
-      {
-        "field": "fire_type",
-        "type": "nominal",
-        "title": "Type"
-      },
-      {
-        "field": "n_fires",
-        "type": "quantitative",
-        "title": "Fires"
-      }
+      {"field": "month", "type": "nominal", "title": "Month"},
+      {"field": "fire_type", "type": "nominal", "title": "Type"},
+      {"field": "n_fires", "type": "quantitative", "title": "Fires"}
     ]
   }
 }

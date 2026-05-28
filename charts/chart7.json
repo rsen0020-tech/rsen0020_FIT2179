@@ -1,43 +1,43 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Area burnt in Victoria each year by fire type, with major fire seasons labelled. Source: Historical Bushfire Boundaries v2.0. Area is the sum of recorded fire footprints and may include areas counted more than once.",
+  "description": "Area burnt in Victoria each year by fire type, with major fire seasons labelled. Click a series in the legend to isolate it. Source: Historical Bushfire Boundaries v2.0.",
   "title": {
     "text": "Area burnt in Victoria each year",
-    "subtitle": "Sum of recorded fire footprints (hectares), 1950\u20132023",
+    "subtitle": "Click 'Bushfire' or 'Prescribed Burn' in the legend to isolate a series",
     "anchor": "start",
-    "fontSize": 22,
-    "subtitleColor": "#6b625a",
-    "subtitleFontSize": 15,
-    "font": "Source Serif 4, Georgia, serif",
-    "fontWeight": 600,
+    "offset": 14,
+    "fontSize": 26,
+    "fontWeight": 700,
     "color": "#211c19",
+    "font": "Newsreader, Source Serif 4, Georgia, serif",
+    "subtitleFontSize": 17,
+    "subtitleColor": "#6b625a",
     "subtitleFont": "Source Sans 3, sans-serif",
-    "subtitleFontStyle": "italic",
-    "offset": 12
+    "subtitleFontStyle": "italic"
   },
   "width": "container",
-  "height": 320,
+  "height": 340,
   "config": {
     "font": "Source Sans 3, sans-serif",
-    "padding": 8,
+    "padding": 10,
     "axis": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
+      "labelFontSize": 15,
+      "titleFontSize": 16,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 10,
+      "titlePadding": 12,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 14,
-      "titleFontSize": 15,
+      "labelFontSize": 15,
+      "titleFontSize": 16,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 100
+      "symbolSize": 140
     },
     "view": {
       "stroke": null
@@ -51,8 +51,9 @@
       "mark": {
         "type": "line",
         "point": {
-          "size": 16
-        }
+          "size": 18
+        },
+        "strokeWidth": 2
       },
       "encoding": {
         "x": {
@@ -95,6 +96,13 @@
             ]
           }
         },
+        "opacity": {
+          "condition": {
+            "param": "fireSel",
+            "value": 1
+          },
+          "value": 0.18
+        },
         "tooltip": [
           {
             "field": "year",
@@ -114,7 +122,19 @@
             "format": ","
           }
         ]
-      }
+      },
+      "params": [
+        {
+          "name": "fireSel",
+          "select": {
+            "type": "point",
+            "fields": [
+              "fire_type"
+            ]
+          },
+          "bind": "legend"
+        }
+      ]
     },
     {
       "data": {
@@ -127,22 +147,22 @@
           {
             "year": 2019,
             "area_ha": 3314826,
-            "label": "Black Summer"
+            "label": "Black Summer (2019\u201320)"
           },
           {
             "year": 2009,
             "area_ha": 2052579,
-            "label": "Black Saturday"
+            "label": "Black Saturday (2009)"
           }
         ]
       },
       "mark": {
         "type": "text",
         "align": "right",
-        "dx": -8,
+        "dx": -10,
         "dy": -4,
         "fontWeight": "bold",
-        "fontSize": 11,
+        "fontSize": 12,
         "color": "#5a2600"
       },
       "encoding": {
