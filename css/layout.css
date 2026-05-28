@@ -156,7 +156,10 @@ footer { padding: var(--s7) 0 var(--s7); color: var(--ink); font-size: 16px; }
 .ack { font-style: italic; }
 
 /* ---------- Vega-Lite polish ---------- */
-.vega-embed, .vega-embed > svg { display: block; max-width: 100%; height: auto !important; }
+/* overflow visible so in-chart annotations near the plot edges aren't clipped */
+.chart-card { overflow: visible; }
+.vega-embed { display: block; max-width: 100%; overflow: visible !important; }
+.vega-embed > svg { display: block; max-width: 100%; overflow: visible !important; }
 #vg-tooltip-element.vg-tooltip {
   font-family: var(--sans) !important;
   font-size: 13px !important;
