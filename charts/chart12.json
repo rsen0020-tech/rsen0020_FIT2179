@@ -10,13 +10,13 @@
     "fontWeight": 700,
     "color": "#211c19",
     "font": "Newsreader, Source Serif 4, Georgia, serif",
-    "subtitleFontSize": 17,
+    "subtitleFontSize": 19,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Source Sans 3, sans-serif",
     "subtitleFontStyle": "italic"
   },
   "width": "container",
-  "height": 420,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding"

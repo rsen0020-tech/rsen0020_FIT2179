@@ -98,7 +98,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: var(--s4) var(--s4) var(--s3);
+  padding: var(--s3) var(--s3) var(--s2);
   margin-bottom: var(--s4);
   display: flex;
   flex-direction: column;
@@ -107,10 +107,10 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 }
 .chart-card > div[id] { width: 100%; flex: 1; }
 .caption {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted);
-  margin-top: var(--s3);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-top: var(--s2);
   padding-top: var(--s2);
   max-width: none;
   border-top: 1px solid var(--line-soft);

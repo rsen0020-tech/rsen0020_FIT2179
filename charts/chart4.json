@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Number of at-risk facilities in each BARR bushfire risk category. Source: BARR register (data.vic.gov.au).",
+  "description": "Number of at-risk facilities in each BARR bushfire risk category, with the highest-risk Category 1 tier called out. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "Facilities by bushfire risk category",
     "subtitle": "Risk tiers assigned in the register; Category 1 facilities face the highest risk",
     "anchor": "start",
     "fontSize": 26,
     "subtitleColor": "#6b625a",
-    "subtitleFontSize": 17,
+    "subtitleFontSize": 19,
     "font": "Newsreader, Source Serif 4, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
@@ -16,80 +16,30 @@
     "offset": 14
   },
   "width": "container",
-  "height": 240,
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
+  "height": 340,
+  "autosize": {"type": "fit", "contains": "padding"},
   "config": {
     "font": "Source Sans 3, sans-serif",
     "padding": 10,
-    "axis": {
-      "labelFontSize": 15,
-      "titleFontSize": 16,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "titlePadding": 12,
-      "domainColor": "#c9c0b3",
-      "tickColor": "#c9c0b3",
-      "gridColor": "#eee8dc"
-    },
-    "legend": {
-      "labelFontSize": 15,
-      "titleFontSize": 16,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "symbolSize": 120
-    },
-    "view": {
-      "stroke": null
-    }
+    "axis": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "titlePadding": 12, "domainColor": "#c9c0b3", "tickColor": "#c9c0b3", "gridColor": "#eee8dc"},
+    "legend": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "symbolSize": 120},
+    "view": {"stroke": null}
   },
-  "data": {
-    "url": "data/barr_by_category.csv"
-  },
+  "data": {"url": "data/barr_by_category.csv"},
   "encoding": {
-    "x": {
-      "field": "category",
-      "type": "nominal",
-      "title": null,
-      "sort": [
-        "CAT 0",
-        "CAT 1",
-        "CAT 2",
-        "CAT 3"
-      ],
-      "axis": {
-        "labelAngle": 0
-      }
-    },
-    "y": {
-      "field": "n",
-      "type": "quantitative",
-      "title": "Facilities"
-    }
+    "x": {"field": "category", "type": "nominal", "title": null, "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"], "axis": {"labelAngle": 0, "labelFontSize": 16, "labelFontWeight": 600}},
+    "y": {"field": "n", "type": "quantitative", "title": "Facilities"}
   },
   "layer": [
+    {"mark": {"type": "bar", "color": "#b34700"}},
     {
-      "mark": {
-        "type": "bar",
-        "color": "#b34700"
-      }
+      "mark": {"type": "text", "dy": -7, "fontSize": 13, "color": "#2b2b2b"},
+      "encoding": {"text": {"field": "n", "type": "quantitative"}}
     },
     {
-      "mark": {
-        "type": "text",
-        "dy": -7,
-        "color": "#2b2b2b"
-      },
-      "encoding": {
-        "text": {
-          "field": "n",
-          "type": "quantitative"
-        }
-      }
+      "data": {"values": [{"category": "CAT 1", "n": 24, "note": "Highest tier — pre-emptive Code Red closures"}]},
+      "mark": {"type": "text", "dy": -28, "fontSize": 12, "fontWeight": "bold", "color": "#5a2600", "align": "center"},
+      "encoding": {"text": {"field": "note", "type": "nominal"}}
     }
   ]
 }
