@@ -5,7 +5,7 @@
     "text": "Risk category mix across districts",
     "anchor": "start",
     "fontSize": 26,
-    "font": "Newsreader, Source Serif 4, Georgia, serif",
+    "font": "Fraunces, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
     "offset": 14
@@ -17,7 +17,7 @@
     "contains": "padding"
   },
   "config": {
-    "font": "Source Sans 3, sans-serif",
+    "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
       "labelFontSize": 17,

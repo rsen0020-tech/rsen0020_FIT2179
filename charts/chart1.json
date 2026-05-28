@@ -8,17 +8,17 @@
     "fontSize": 32,
     "subtitleColor": "#6b625a",
     "subtitleFontSize": 19,
-    "font": "Newsreader, Source Serif 4, Georgia, serif",
+    "font": "Fraunces, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
-    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFont": "Inter, system-ui, sans-serif",
     "subtitleFontStyle": "italic",
     "offset": 14
   },
   "width": "container",
   "height": 540,
   "config": {
-    "font": "Source Sans 3, sans-serif",
+    "font": "Inter, system-ui, sans-serif",
     "view": {
       "stroke": null
     },
@@ -111,11 +111,12 @@
       "legend": {
         "orient": "top",
         "direction": "horizontal",
-        "gradientLength": 200,
+        "gradientLength": 220,
         "titleColor": "#241f1c",
         "labelColor": "#241f1c",
-        "titleFontSize": 11,
-        "labelFontSize": 10
+        "titleFontSize": 14,
+        "labelFontSize": 13,
+        "titleFontWeight": 600
       }
     },
     "stroke": {
