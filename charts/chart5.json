@@ -11,7 +11,7 @@
     "offset": 14
   },
   "width": "container",
-  "height": 300,
+  "height": 340,
   "autosize": {
     "type": "fit",
     "contains": "padding"

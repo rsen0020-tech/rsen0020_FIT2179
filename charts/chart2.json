@@ -1,17 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "At-risk education facilities by fire weather district. Source: BARR register (data.vic.gov.au).",
+  "description": "At-risk education facilities by fire weather district, with the Central district highlighted. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "At-risk facilities by fire weather district",
     "anchor": "start",
+    "offset": 14,
     "fontSize": 26,
-    "font": "Newsreader, Source Serif 4, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
-    "offset": 14
+    "font": "Newsreader, Source Serif 4, Georgia, serif"
   },
   "width": "container",
-  "height": 280,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -42,36 +42,94 @@
       "stroke": null
     }
   },
-  "data": {
-    "url": "data/barr_by_district.csv"
-  },
-  "mark": {
-    "type": "bar",
-    "color": "#b34700"
-  },
-  "encoding": {
-    "y": {
-      "field": "district",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
-    },
-    "x": {
-      "field": "n",
-      "type": "quantitative",
-      "title": "Facilities"
-    },
-    "tooltip": [
-      {
-        "field": "district",
-        "type": "nominal",
-        "title": "District"
+  "layer": [
+    {
+      "data": {
+        "url": "data/barr_by_district.csv"
       },
-      {
-        "field": "n",
-        "type": "quantitative",
-        "title": "Facilities"
+      "mark": {
+        "type": "bar",
+        "color": "#b34700"
+      },
+      "encoding": {
+        "y": {
+          "field": "district",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Central",
+            "Northern Country",
+            "North East",
+            "North Central",
+            "South West",
+            "West and South Gippsland",
+            "East Gippsland",
+            "Mallee",
+            "Wimmera"
+          ]
+        },
+        "x": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Facilities"
+        },
+        "tooltip": [
+          {
+            "field": "district",
+            "type": "nominal",
+            "title": "District"
+          },
+          {
+            "field": "n",
+            "type": "quantitative",
+            "title": "Facilities"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "district": "Central",
+            "n": 473,
+            "note": "More than half on its own"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "color": "#fff",
+        "fontWeight": "bold",
+        "align": "right",
+        "dx": -8,
+        "fontSize": 13
+      },
+      "encoding": {
+        "y": {
+          "field": "district",
+          "type": "nominal",
+          "sort": [
+            "Central",
+            "Northern Country",
+            "North East",
+            "North Central",
+            "South West",
+            "West and South Gippsland",
+            "East Gippsland",
+            "Mallee",
+            "Wimmera"
+          ]
+        },
+        "x": {
+          "field": "n",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
 }
