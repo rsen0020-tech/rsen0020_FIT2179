@@ -3,17 +3,17 @@
   "description": "Number of fires by month, grouped by fire type. Shows bushfires peak in summer while prescribed burns peak in autumn and spring. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
     "text": "When fires happen",
-    "subtitle": "Bushfires peak in summer; planned burns in autumn and spring",
+    "subtitle": "Two seasonal rhythms side by side",
     "anchor": "start",
-    "fontSize": 19,
+    "fontSize": 22,
     "subtitleColor": "#6b625a",
-    "subtitleFontSize": 14,
+    "subtitleFontSize": 15,
     "font": "Source Serif 4, Georgia, serif",
     "fontWeight": 600,
     "color": "#211c19",
     "subtitleFont": "Source Sans 3, sans-serif",
     "subtitleFontStyle": "italic",
-    "offset": 10
+    "offset": 12
   },
   "width": "container",
   "height": 300,
@@ -23,25 +23,25 @@
   },
   "config": {
     "font": "Source Sans 3, sans-serif",
-    "padding": 5,
+    "padding": 8,
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 13,
+      "labelFontSize": 14,
+      "titleFontSize": 15,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 8,
+      "titlePadding": 10,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 13,
+      "labelFontSize": 14,
+      "titleFontSize": 15,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 80
+      "symbolSize": 100
     },
     "view": {
       "stroke": null
