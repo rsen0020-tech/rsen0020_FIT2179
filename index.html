@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="css/layout.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -198,6 +198,12 @@
                     </div>
                 </div>
             </div>
+
+            <p class="callout">
+                The summer fire window &mdash; December through February &mdash; has been
+                remarkably consistent for more than a century. What has changed is its
+                intensity from one decade to the next.
+            </p>
         </section>
 
         <section>
@@ -234,23 +240,8 @@
 
         <footer>
             <div class="meta-card">
-                <h2>About this story</h2>
+                <h2>Sources &amp; credits</h2>
 
-                <h3>Why</h3>
-                <p>
-                    Where is bushfire risk to Victorian schools concentrated today, and what kind
-                    of fire seasons should the state expect? Both questions matter for emergency
-                    policy and for the everyday decisions of parents and teachers.
-                </p>
-
-                <h3>Who</h3>
-                <p>
-                    Written for the average Victorian &mdash; parents, teachers and anyone living
-                    in the bushfire interface. Specialised terms are introduced at first use and
-                    numbers are anchored to shires, seasons or named fires rather than statistics.
-                </p>
-
-                <h3>What &middot; the data</h3>
                 <ul>
                     <li>
                         <strong>Bushfire At-Risk Register (BARR) 2025&ndash;26</strong>, Victorian
@@ -263,36 +254,22 @@
                         <a href="https://digital.atlas.gov.au/datasets/digitalatlas::historical-bushfire-boundaries-version-2-0">digital.atlas.gov.au</a>.
                     </li>
                     <li>
-                        <strong>ABS Local Government Areas (ASGS 2011)</strong>, filtered to Victoria
-                        and simplified for fast loading.
+                        <strong>Australian Bureau of Statistics &mdash; Local Government Areas
+                        (ASGS 2011)</strong>, filtered to Victoria and simplified for fast loading.
                     </li>
                 </ul>
 
-                <h3>How &middot; the idioms</h3>
-                <p>
-                    An equal-area <strong>choropleth</strong> for geographic distribution; ranked
-                    horizontal <strong>bars</strong> for "which is largest?"; a <strong>stacked
-                    bar</strong> and two <strong>heatmaps</strong> for category and seasonal mix;
-                    an annotated multi-series <strong>line</strong> for time, with named seasons;
-                    a <strong>histogram</strong> for the long-tailed distribution of fire size.
-                    Colour is semantic: warm yellow-to-red for fire intensity, green for prescribed
-                    burning. Hover adds detail-on-demand.
-                </p>
-
-                <h3>Author &amp; date</h3>
-                <p>[Your Full Name] &middot; [Student ID]. Last updated May 2026.</p>
+                <p><strong>[Your Full Name]</strong> &middot; [Student ID] &middot; Last updated May 2026.</p>
 
                 <p class="note">
-                    Data notes: figures cover Victoria only. "Area burnt" is the sum of recorded
-                    fire footprints and may include overlapping polygons. Three facilities in alpine
-                    resorts and unincorporated areas are excluded from the map as they fall outside
-                    ABS LGA boundaries.
+                    Figures cover Victoria only. "Area burnt" is the sum of recorded fire footprints
+                    and may include overlapping polygons. Three facilities in alpine resorts and
+                    unincorporated areas fall outside ABS LGA boundaries and are excluded from the map.
                 </p>
                 <p class="ack">
                     Generative AI was used to help build the page, write the Vega-Lite chart code,
                     and aggregate the source spreadsheets into the small summary tables in
-                    <code>/data</code>. All underlying data is unmodified and drawn from the public
-                    sources above.
+                    <code>/data</code>. All underlying data is unmodified.
                 </p>
             </div>
         </footer>
