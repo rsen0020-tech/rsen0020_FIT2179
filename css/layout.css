@@ -106,14 +106,21 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   flex: 1;
 }
 .chart-card > div[id] { width: 100%; flex: 1; }
-.caption {
+.insight {
+  background: var(--paper-warm);
+  border-left: 4px solid var(--flame);
+  border-radius: 3px;
+  padding: var(--s2) var(--s3);
+  margin-top: var(--s3);
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink);
-  margin-top: var(--s2);
-  padding-top: var(--s2);
   max-width: none;
-  border-top: 1px solid var(--line-soft);
+}
+.insight strong {
+  color: var(--ember);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 /* ---------- Insight callout ---------- */

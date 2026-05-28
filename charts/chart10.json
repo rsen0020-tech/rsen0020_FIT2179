@@ -17,38 +17,131 @@
   },
   "width": "container",
   "height": 360,
-  "autosize": {"type": "fit", "contains": "padding"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "config": {
     "font": "Source Sans 3, sans-serif",
     "padding": 10,
-    "axis": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "titlePadding": 12, "domainColor": "#c9c0b3", "tickColor": "#c9c0b3", "gridColor": "#eee8dc"},
-    "legend": {"labelFontSize": 15, "titleFontSize": 16, "titleColor": "#211c19", "labelColor": "#211c19", "titleFontWeight": 600, "symbolSize": 120},
-    "view": {"stroke": null}
+    "axis": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "titlePadding": 12,
+      "domainColor": "#c9c0b3",
+      "tickColor": "#c9c0b3",
+      "gridColor": "#eee8dc"
+    },
+    "legend": {
+      "labelFontSize": 17,
+      "titleFontSize": 18,
+      "titleColor": "#211c19",
+      "labelColor": "#211c19",
+      "titleFontWeight": 600,
+      "symbolSize": 140
+    },
+    "view": {
+      "stroke": null
+    }
   },
   "encoding": {
-    "x": {"field": "month", "type": "nominal", "title": null, "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "axis": {"labelAngle": 0, "labelFontSize": 15}},
-    "y": {"field": "decade", "type": "nominal", "title": null, "axis": {"labelFontSize": 15}}
+    "x": {
+      "field": "month",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 15
+      }
+    },
+    "y": {
+      "field": "decade",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelFontSize": 15
+      }
+    }
   },
   "layer": [
     {
-      "data": {"url": "data/hist_decade_month_bushfire.csv"},
-      "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+      "data": {
+        "url": "data/hist_decade_month_bushfire.csv"
+      },
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
       "encoding": {
-        "color": {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires", "scale": {"scheme": "yelloworangered"}},
+        "color": {
+          "field": "n_bushfires",
+          "type": "quantitative",
+          "title": "Bushfires",
+          "scale": {
+            "scheme": "yelloworangered"
+          }
+        },
         "tooltip": [
-          {"field": "decade", "type": "nominal", "title": "Decade"},
-          {"field": "month", "type": "nominal", "title": "Month"},
-          {"field": "n_bushfires", "type": "quantitative", "title": "Bushfires"}
+          {
+            "field": "decade",
+            "type": "nominal",
+            "title": "Decade"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "n_bushfires",
+            "type": "quantitative",
+            "title": "Bushfires"
+          }
         ]
       }
     },
     {
-      "data": {"values": [
-        {"month": "Jan", "decade": "1910s", "label": "← Summer fire window"}
-      ]},
-      "mark": {"type": "text", "fontWeight": "bold", "fontSize": 13, "color": "#5a2600", "align": "left", "dx": 10, "dy": -22},
+      "data": {
+        "values": [
+          {
+            "month": "Jan",
+            "decade": "1910s",
+            "label": "\u2190 Summer fire window"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 13,
+        "color": "#5a2600",
+        "align": "left",
+        "dx": 10,
+        "dy": -22
+      },
       "encoding": {
-        "text": {"field": "label", "type": "nominal"}
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ]
