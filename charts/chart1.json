@@ -24,8 +24,8 @@
     },
     "padding": 10,
     "axis": {
-      "labelFontSize": 15,
-      "titleFontSize": 16,
+      "labelFontSize": 17,
+      "titleFontSize": 18,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
@@ -35,12 +35,12 @@
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 15,
-      "titleFontSize": 16,
+      "labelFontSize": 17,
+      "titleFontSize": 18,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 120
+      "symbolSize": 140
     }
   },
   "projection": {
