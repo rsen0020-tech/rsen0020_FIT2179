@@ -110,13 +110,14 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 .chart-card > div[id] { width: 100%; flex: 1; }
 .insight {
   position: relative;
-  background: #fffaf2;
+  background: #fdebc6;
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 18px 22px;
   margin-top: var(--s3);
   font-size: 14.5px;
   line-height: 1.65;
+  font-weight: 500;
   color: var(--ink);
   max-width: none;
 }
@@ -124,7 +125,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   display: block;
   font-family: var(--sans);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink);

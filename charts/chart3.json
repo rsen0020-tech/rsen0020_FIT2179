@@ -106,7 +106,14 @@
         "x": {
           "field": "n",
           "type": "quantitative",
-          "title": "At-risk facilities"
+          "title": "At-risk facilities",
+          "scale": {
+            "domain": [
+              0,
+              80
+            ],
+            "clamp": true
+          }
         },
         "fillOpacity": {
           "condition": {
@@ -135,8 +142,8 @@
         "values": [
           {
             "lga_name": "Yarra Ranges",
-            "n": 156,
-            "note": "Twice any other shire"
+            "n": 80,
+            "note": "156 — over twice any other LGA"
           }
         ]
       },
