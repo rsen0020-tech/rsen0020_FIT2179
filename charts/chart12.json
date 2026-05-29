@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "The 15 largest individual Victorian bushfire footprints on record, with the 1939 Black Friday fire highlighted. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
-    "text": "The largest recorded bushfires",
+    "text": "Largest single bushfires on record",
     "subtitle": "Single fire footprints, hectares — hover a bar for the year and total",
     "anchor": "start",
     "offset": 12,
