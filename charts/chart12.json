@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "The 15 largest individual Victorian bushfire footprints on record, with the 1939 Black Friday fire highlighted. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "description": "The largest individual Victorian bushfire footprints on record, with the 1939 Black Friday fire highlighted. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
     "text": "Largest single bushfires on record",
     "subtitle": "Single fire footprints, hectares — hover a bar for the year and total",
@@ -65,7 +65,21 @@
           "field": "fire_name",
           "type": "nominal",
           "title": null,
-          "sort": "-x",
+          "sort": [
+            "Black Friday (1939)",
+            "2003 Alpine fires",
+            "Snowy Complex (2020)",
+            "2006 Great Divide",
+            "1958 fires",
+            "1965 Gippsland",
+            "2006 fires",
+            "Upper Murray–Walwa (2019)",
+            "Dunns Road (2019)",
+            "Tambo Complex (2019)",
+            "Ash Wednesday (1983)",
+            "2002 fires",
+            "Goongerah–Deddick Trail (2014)"
+          ],
           "axis": {
             "labelLimit": 180,
             "labelFontSize": 12,
@@ -112,7 +126,25 @@
         "dx": -12
       },
       "encoding": {
-        "y": {"field": "fire_name", "type": "nominal", "sort": "-x"},
+        "y": {
+          "field": "fire_name",
+          "type": "nominal",
+          "sort": [
+            "Black Friday (1939)",
+            "2003 Alpine fires",
+            "Snowy Complex (2020)",
+            "2006 Great Divide",
+            "1958 fires",
+            "1965 Gippsland",
+            "2006 fires",
+            "Upper Murray–Walwa (2019)",
+            "Dunns Road (2019)",
+            "Tambo Complex (2019)",
+            "Ash Wednesday (1983)",
+            "2002 fires",
+            "Goongerah–Deddick Trail (2014)"
+          ]
+        },
         "x": {"field": "area_ha", "type": "quantitative"},
         "text": {"field": "note", "type": "nominal"}
       }
