@@ -110,8 +110,8 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 .chart-card > div[id] { width: 100%; flex: 1; }
 .insight {
   position: relative;
-  background: var(--card);
-  border: 1px solid var(--line);
+  background: linear-gradient(135deg, #fff8ee 0%, #fdecd6 100%);
+  border: 1px solid #f1dcbc;
   border-radius: 10px;
   padding: 18px 22px 18px 26px;
   margin-top: var(--s3);
@@ -120,7 +120,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   color: var(--ink);
   max-width: none;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(36, 31, 28, 0.04), 0 10px 22px -14px rgba(178, 71, 0, 0.18);
+  box-shadow: 0 1px 2px rgba(36, 31, 28, 0.05), 0 10px 24px -14px rgba(178, 71, 0, 0.22);
 }
 .insight::before {
   content: "";
@@ -153,15 +153,30 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 }
 
 /* Floating variant — used for the map so the insight sits in the chart card's
-   top-right corner instead of below the figure. */
+   top-right corner instead of below the figure. Bigger than the inline version
+   so it fills the empty space alongside the map. */
 @media (min-width: 768px) {
   .insight-corner {
     position: absolute;
     top: 28px;
     right: 28px;
-    width: 360px;
+    width: 420px;
     margin-top: 0;
     z-index: 5;
+    padding: 22px 26px 24px 30px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    border-radius: 12px;
+  }
+  .insight-corner strong {
+    font-size: 11.5px;
+    letter-spacing: 0.24em;
+    margin-bottom: 9px;
+  }
+  .insight-corner::before {
+    width: 4px;
+    top: 18px;
+    bottom: 18px;
   }
 }
 

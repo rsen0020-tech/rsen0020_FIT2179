@@ -77,7 +77,11 @@
           "field": "label",
           "type": "nominal",
           "title": null,
-          "sort": "-x"
+          "sort": "-x",
+          "axis": {
+            "labelLimit": 320,
+            "labelFontSize": 12
+          }
         },
         "x": {
           "field": "area_ha",
@@ -85,7 +89,8 @@
           "title": "Area burnt (ha)",
           "axis": {
             "format": "~s",
-            "tickCount": 4
+            "tickCount": 4,
+            "grid": false
           }
         },
         "fillOpacity": {
