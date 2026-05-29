@@ -171,6 +171,24 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   }
 }
 
+/* ---------- Two-column section intro with small subheadings ---------- */
+.intro-cols { margin-bottom: var(--s4); align-items: start; }
+/* the global grid rule turns every column into a flex row; for the intro
+   columns we want the subheading to stack above its paragraph instead */
+.intro-cols > [class*="pure-u-"] { display: block; }
+.intro-cols p { font-size: 17px; max-width: 42ch; }
+.subhead {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ember);
+  margin-bottom: var(--s1);
+  padding-bottom: var(--s1);
+  border-bottom: 2px solid var(--line);
+}
+
 /* ---------- Bridge / storytelling interlude between charts ---------- */
 .bridge {
   max-width: 56ch;
