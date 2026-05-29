@@ -9,7 +9,7 @@
     "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "font": "Plus Jakarta Sans, Inter, system-ui, sans-serif",
     "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
@@ -85,10 +85,15 @@
             ]
           },
           "legend": {
-            "orient": "top",
-            "direction": "horizontal",
-            "offset": 4,
-            "titleOrient": "left"
+            "orient": "top-right",
+            "direction": "vertical",
+            "fillColor": "#ffffff",
+            "strokeColor": "#e4dccf",
+            "padding": 10,
+            "cornerRadius": 6,
+            "offset": 8,
+            "labelFontSize": 12,
+            "titleFontSize": 12
           }
         },
         "opacity": {
@@ -178,14 +183,11 @@
         "type": "text",
         "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
-        "fontWeight": 600,
+        "fontWeight": 700,
         "fontSize": 14,
-        "color": "#5a2600",
+        "color": "#3d1900",
         "align": "center",
-        "dy": -8,
-        "stroke": "#faf7f2",
-        "strokeWidth": 4,
-        "paintOrder": "stroke"
+        "dy": -8
       },
       "encoding": {
         "x": {

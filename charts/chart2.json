@@ -8,7 +8,7 @@
     "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Inter Tight, Inter, system-ui, sans-serif"
+    "font": "Plus Jakarta Sans, Inter, system-ui, sans-serif"
   },
   "width": "container",
   "height": 380,
@@ -102,7 +102,7 @@
         "color": "#fff",
         "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
-        "fontWeight": 600,
+        "fontWeight": 700,
         "align": "right",
         "dx": -10,
         "fontSize": 14

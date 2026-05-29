@@ -9,7 +9,7 @@
     "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "font": "Plus Jakarta Sans, Inter, system-ui, sans-serif",
     "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
@@ -168,14 +168,12 @@
         "type": "text",
         "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
-        "fontWeight": 600,
+        "fontWeight": 700,
         "fontSize": 14,
-        "color": "#5a2600",
-        "stroke": "#faf7f2",
-        "strokeWidth": 4,
-        "paintOrder": "stroke",
+        "color": "#3d1900",
         "dy": -8,
-        "align": "center"
+        "align": "left",
+        "dx": -4
       },
       "encoding": {
         "x": {
@@ -215,12 +213,9 @@
         "type": "text",
         "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
-        "fontWeight": 600,
+        "fontWeight": 700,
         "fontSize": 14,
-        "color": "#5a2600",
-        "stroke": "#faf7f2",
-        "strokeWidth": 4,
-        "paintOrder": "stroke",
+        "color": "#3d1900",
         "dy": -8,
         "align": "right",
         "dx": -6
