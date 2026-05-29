@@ -137,7 +137,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   color: var(--ink);
   max-width: none;
 }
-.insight strong {
+.insight > strong:first-child {
   display: block;
   font-family: var(--chart-display);
   font-size: 13px;
@@ -147,6 +147,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   color: var(--ink);
   margin-bottom: 8px;
 }
+.insight strong { font-weight: 700; }
 
 /* Floating variant — used for the map so the insight sits in the chart card's
    top-right corner instead of below the figure. Bigger than the inline version
@@ -164,7 +165,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
     line-height: 1.65;
     border-radius: 2px;
   }
-  .insight-corner strong {
+  .insight-corner > strong:first-child {
     font-size: 14.5px;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
