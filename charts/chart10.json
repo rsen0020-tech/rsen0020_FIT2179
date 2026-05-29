@@ -5,18 +5,18 @@
     "text": "Bushfire timing across the decades",
     "subtitle": "Number of bushfires by month",
     "anchor": "start",
-    "offset": 14,
-    "fontSize": 26,
+    "offset": 12,
+    "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Fraunces, Georgia, serif",
-    "subtitleFontSize": 19,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
-    "subtitleFontStyle": "italic"
+    "subtitleFontWeight": 500
   },
   "width": "container",
-  "height": 360,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -25,23 +25,23 @@
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
@@ -68,7 +68,7 @@
       ],
       "axis": {
         "labelAngle": 0,
-        "labelFontSize": 15
+        "labelFontSize": 13
       }
     },
     "y": {
@@ -76,7 +76,7 @@
       "type": "nominal",
       "title": null,
       "axis": {
-        "labelFontSize": 15
+        "labelFontSize": 13
       }
     }
   },
@@ -122,22 +122,22 @@
       "data": {
         "values": [
           {
-            "month": "Jan",
-            "decade": "1910s",
-            "label": "\u2190 Summer fire window"
+            "month": "Jul",
+            "decade": "2010s",
+            "label": "← Jan–Feb bushfire peak"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "font": "Fraunces, Georgia, serif",
+        "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
         "fontWeight": 600,
-        "fontSize": 16,
+        "fontSize": 14,
         "color": "#5a2600",
         "align": "left",
-        "dx": 12,
-        "dy": -24
+        "dx": -14,
+        "dy": 0
       },
       "encoding": {
         "text": {

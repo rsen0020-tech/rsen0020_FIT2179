@@ -4,11 +4,11 @@
   "title": {
     "text": "At-risk facilities by fire weather district",
     "anchor": "start",
-    "offset": 14,
-    "fontSize": 26,
+    "offset": 12,
+    "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Fraunces, Georgia, serif"
+    "font": "Inter Tight, Inter, system-ui, sans-serif"
   },
   "width": "container",
   "height": 380,
@@ -20,23 +20,23 @@
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
@@ -100,12 +100,12 @@
       "mark": {
         "type": "text",
         "color": "#fff",
-        "font": "Fraunces, Georgia, serif",
+        "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
         "fontWeight": 600,
         "align": "right",
         "dx": -10,
-        "fontSize": 15
+        "fontSize": 14
       },
       "encoding": {
         "y": {

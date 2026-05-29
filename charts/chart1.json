@@ -3,17 +3,17 @@
   "description": "Choropleth of bushfire at-risk education facilities per Victorian local government area, combining the BARR register with ABS LGA boundaries. Uses an equal-area projection so colour can be compared fairly across areas of different size.",
   "title": {
     "text": "Where Victoria's at-risk schools are",
-    "subtitle": "Bushfire at-risk education facilities by local government area, 2025\u201326",
+    "subtitle": "Bushfire at-risk education facilities by local government area, 2025–26",
     "anchor": "start",
-    "fontSize": 32,
+    "fontSize": 24,
     "subtitleColor": "#6b625a",
-    "subtitleFontSize": 19,
-    "font": "Fraunces, Georgia, serif",
+    "subtitleFontSize": 14,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
     "fontWeight": 700,
     "color": "#211c19",
     "subtitleFont": "Inter, system-ui, sans-serif",
-    "subtitleFontStyle": "italic",
-    "offset": 14
+    "subtitleFontWeight": 500,
+    "offset": 12
   },
   "width": "container",
   "height": 540,
@@ -24,23 +24,23 @@
     },
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     }
   },
   "projection": {

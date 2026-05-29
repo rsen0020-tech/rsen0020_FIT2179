@@ -11,7 +11,7 @@
   --sand: #8a5a33;
   --green: #5b8c5a;
 
-  --serif: "Fraunces", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --display: "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
 
   --s1: 8px;
@@ -31,8 +31,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.6;
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
@@ -42,17 +42,16 @@ body {
 .content { max-width: var(--max); margin: 0 auto; padding: 0 var(--s3); }
 
 h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.018em;
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.022em;
   color: var(--ember);
-  font-variation-settings: "opsz" 96, "SOFT" 30;
 }
-h1 { font-size: clamp(46px, 6.8vw, 68px); font-weight: 700; letter-spacing: -0.03em; font-variation-settings: "opsz" 144, "SOFT" 40; }
-h2 { font-size: clamp(32px, 4vw, 46px); }
-h3 { font-size: clamp(20px, 1.7vw, 24px); margin-bottom: var(--s2); }
-h4 { font-family: var(--sans); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ember); margin-bottom: var(--s2); margin-top: var(--s4); }
+h1 { font-size: clamp(40px, 5.6vw, 56px); font-weight: 800; letter-spacing: -0.028em; }
+h2 { font-size: clamp(28px, 3.4vw, 38px); }
+h3 { font-size: clamp(19px, 1.6vw, 22px); margin-bottom: var(--s2); }
+h4 { font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ember); margin-bottom: var(--s2); margin-top: var(--s4); }
 
 p { max-width: 66ch; }
 
@@ -74,14 +73,14 @@ p { max-width: 66ch; }
 }
 .hero h1 { margin-bottom: var(--s3); }
 .lede {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: var(--sans);
   font-weight: 400;
-  font-size: clamp(20px, 2vw, 24px);
-  line-height: 1.45;
+  font-size: clamp(19px, 1.8vw, 22px);
+  line-height: 1.5;
   color: var(--muted);
   max-width: 60ch;
   margin-bottom: var(--s4);
+  letter-spacing: -0.005em;
 }
 .hero .intro { max-width: 62ch; margin-bottom: var(--s3); font-size: 18px; line-height: 1.65; }
 .byline { font-size: 14px; color: var(--muted); letter-spacing: 0.02em; }
@@ -127,10 +126,10 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 
 /* ---------- Insight callout ---------- */
 .callout {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(19px, 1.8vw, 22px);
-  line-height: 1.45;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.5;
   color: var(--ink);
   background: var(--paper-warm);
   border-left: 4px solid var(--flame);
@@ -138,6 +137,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   padding: var(--s3) var(--s4);
   margin: var(--s4) 0;
   max-width: 70ch;
+  letter-spacing: -0.003em;
 }
 
 /* ---------- Footer ---------- */
@@ -163,30 +163,6 @@ footer { padding: var(--s7) 0 var(--s7); color: var(--ink); font-size: 16px; }
 .vega-embed { display: block; max-width: 100%; overflow: visible !important; }
 .vega-embed > svg { display: block; max-width: 100%; overflow: visible !important; }
 
-/* HTML annotation pill anchored top-right of each chart card.
-   Belt-and-braces backup for in-chart text marks that browser Vega-Lite
-   occasionally fails to render. */
-.chart-anno {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  background: #fff4ea;
-  border: 1px solid var(--flame);
-  color: #5a2600;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 18px;
-  max-width: 280px;
-  text-align: center;
-  z-index: 5;
-  letter-spacing: 0.005em;
-  line-height: 1.35;
-  box-shadow: 0 1px 2px rgba(36, 31, 28, 0.08);
-}
-.chart-anno em { font-style: normal; color: var(--ember); }
 #vg-tooltip-element.vg-tooltip {
   font-family: var(--sans) !important;
   font-size: 13px !important;

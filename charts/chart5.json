@@ -4,11 +4,11 @@
   "title": {
     "text": "Risk category mix across districts",
     "anchor": "start",
-    "fontSize": 26,
-    "font": "Fraunces, Georgia, serif",
+    "fontSize": 21,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
     "fontWeight": 700,
     "color": "#211c19",
-    "offset": 14
+    "offset": 12
   },
   "width": "container",
   "height": 340,
@@ -20,23 +20,23 @@
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
