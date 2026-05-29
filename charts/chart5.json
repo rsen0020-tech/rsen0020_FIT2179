@@ -1,10 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Heatmap of at-risk facility counts by fire weather district and risk category. Source: BARR register (data.vic.gov.au).",
+  "description": "Heatmap of at-risk facility counts by fire weather district and risk category, with the count printed in each cell. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "Risk category mix across districts",
+    "subtitle": "Number of at-risk facilities in each district and category",
     "anchor": "start",
     "fontSize": 21,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#6b625a",
+    "subtitleFont": "Inter, system-ui, sans-serif",
+    "subtitleFontWeight": 500,
     "font": "Spectral, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
@@ -45,76 +50,62 @@
   "data": {
     "url": "data/barr_district_category.csv"
   },
-  "mark": {
-    "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 1
-  },
+  "transform": [
+    {
+      "impute": "n",
+      "key": "category",
+      "keyvals": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"],
+      "groupby": ["district"],
+      "value": 0
+    }
+  ],
   "encoding": {
     "x": {
       "field": "category",
       "type": "nominal",
       "title": null,
-      "sort": [
-        "CAT 0",
-        "CAT 1",
-        "CAT 2",
-        "CAT 3"
-      ],
-      "axis": {
-        "labelAngle": 0
-      }
+      "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"],
+      "axis": {"labelAngle": 0}
     },
     "y": {
       "field": "district",
       "type": "nominal",
       "title": null,
-      "sort": {
-        "field": "n",
-        "op": "sum",
-        "order": "descending"
-      }
-    },
-    "color": {
-      "field": "n",
-      "type": "quantitative",
-      "title": "Facilities",
-      "scale": {
-        "scheme": "yelloworangered"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "district",
-        "type": "nominal",
-        "title": "District"
-      },
-      {
-        "field": "category",
-        "type": "nominal",
-        "title": "Category"
-      },
-      {
-        "field": "n",
-        "type": "quantitative",
-        "title": "Facilities"
-      }
-    ]
+      "sort": {"field": "n", "op": "sum", "order": "descending"}
+    }
   },
-  "transform": [
+  "layer": [
     {
-      "impute": "n",
-      "key": "category",
-      "keyvals": [
-        "CAT 0",
-        "CAT 1",
-        "CAT 2",
-        "CAT 3"
-      ],
-      "groupby": [
-        "district"
-      ],
-      "value": 0
+      "mark": {"type": "rect", "stroke": "white", "strokeWidth": 1},
+      "encoding": {
+        "color": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Facilities",
+          "scale": {"scheme": "yelloworangered"}
+        },
+        "tooltip": [
+          {"field": "district", "type": "nominal", "title": "District"},
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "n", "type": "quantitative", "title": "Facilities"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.n > 0"}],
+      "mark": {
+        "type": "text",
+        "font": "Inter, system-ui, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "text": {"field": "n", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum.n >= 60", "value": "#ffffff"},
+          "value": "#3d1900"
+        }
+      }
     }
   ]
 }

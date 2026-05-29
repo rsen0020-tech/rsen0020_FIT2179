@@ -1,10 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Stacked bar of risk categories within each education sector. Source: BARR register (data.vic.gov.au).",
+  "description": "Stacked bar of risk categories within each education sector, with the total per sector labelled at the end of each bar. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "Risk categories by education sector",
+    "subtitle": "Each bar split by risk tier; total facilities labelled at the end",
     "anchor": "start",
     "fontSize": 21,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#6b625a",
+    "subtitleFont": "Inter, system-ui, sans-serif",
+    "subtitleFontWeight": 500,
     "font": "Spectral, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
@@ -45,56 +50,54 @@
   "data": {
     "url": "data/barr_sector_category.csv"
   },
-  "mark": {
-    "type": "bar"
-  },
   "encoding": {
     "y": {
       "field": "sector",
       "type": "nominal",
       "title": null,
-      "sort": {
-        "field": "n",
-        "op": "sum",
-        "order": "descending"
+      "sort": {"field": "n", "op": "sum", "order": "descending"}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "x": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Facilities",
+          "stack": "zero"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Risk category",
+          "sort": ["CAT 0", "CAT 1", "CAT 2", "CAT 3"],
+          "scale": {"scheme": "oranges"}
+        },
+        "tooltip": [
+          {"field": "sector", "type": "nominal", "title": "Sector"},
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "n", "type": "quantitative", "title": "Facilities"}
+        ]
       }
     },
-    "x": {
-      "field": "n",
-      "type": "quantitative",
-      "title": "Facilities",
-      "stack": "zero"
-    },
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Risk category",
-      "sort": [
-        "CAT 0",
-        "CAT 1",
-        "CAT 2",
-        "CAT 3"
+    {
+      "transform": [
+        {"aggregate": [{"op": "sum", "field": "n", "as": "total"}], "groupby": ["sector"]}
       ],
-      "scale": {
-        "scheme": "oranges"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "sector",
-        "type": "nominal",
-        "title": "Sector"
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#3d1900"
       },
-      {
-        "field": "category",
-        "type": "nominal",
-        "title": "Category"
-      },
-      {
-        "field": "n",
-        "type": "quantitative",
-        "title": "Facilities"
+      "encoding": {
+        "x": {"field": "total", "type": "quantitative"},
+        "text": {"field": "total", "type": "quantitative"}
       }
-    ]
-  }
+    }
+  ]
 }
