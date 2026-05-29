@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "The 15 largest individual Victorian bushfire footprints on record, with the 1939 Black Friday fires highlighted. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
+  "description": "The 15 largest individual Victorian bushfire footprints on record, with the 1939 Black Friday fire highlighted. Source: Historical Bushfire Boundaries v2.0 (Digital Atlas of Australia).",
   "title": {
     "text": "The largest recorded bushfires",
-    "subtitle": "Single fire footprints, hectares",
+    "subtitle": "Single fire footprints, hectares — hover a bar for the year and total",
     "anchor": "start",
     "offset": 12,
     "fontSize": 21,
@@ -35,14 +35,6 @@
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
-    "legend": {
-      "labelFontSize": 13,
-      "titleFontSize": 14,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "symbolSize": 110
-    },
     "view": {
       "stroke": null
     }
@@ -52,84 +44,61 @@
       "data": {
         "url": "data/hist_top_fires.csv"
       },
-      "transform": [
-        {
-          "calculate": "datum.fire_name + ' (' + datum.year + ')'",
-          "as": "label"
-        }
-      ],
       "params": [
         {
           "name": "hover",
           "select": {
             "type": "point",
             "on": "pointerover",
-            "clear": "pointerout"
+            "clear": "pointerout",
+            "fields": ["fire_name"]
           }
         }
       ],
       "mark": {
         "type": "bar",
-        "color": "#b34700"
+        "color": "#b34700",
+        "cornerRadiusEnd": 3
       },
       "encoding": {
         "y": {
-          "field": "label",
+          "field": "fire_name",
           "type": "nominal",
           "title": null,
           "sort": "-x",
           "axis": {
-            "labelLimit": 320,
-            "labelFontSize": 12
+            "labelLimit": 180,
+            "labelFontSize": 12,
+            "labelPadding": 6
           }
         },
         "x": {
           "field": "area_ha",
           "type": "quantitative",
-          "title": "Area burnt (ha)",
+          "title": "Total area burnt (hectares)",
           "axis": {
             "format": "~s",
             "tickCount": 4,
-            "grid": false
+            "grid": false,
+            "ticks": false,
+            "domainColor": "#c9c0b3"
           }
         },
         "fillOpacity": {
-          "condition": {
-            "param": "hover",
-            "empty": false,
-            "value": 1
-          },
+          "condition": {"param": "hover", "empty": false, "value": 1},
           "value": 0.85
         },
         "tooltip": [
-          {
-            "field": "fire_name",
-            "type": "nominal",
-            "title": "Fire"
-          },
-          {
-            "field": "year",
-            "type": "quantitative",
-            "title": "Year",
-            "format": "d"
-          },
-          {
-            "field": "area_ha",
-            "type": "quantitative",
-            "title": "Area (ha)",
-            "format": ","
-          }
+          {"field": "fire_name", "type": "nominal", "title": "Fire"},
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "area_ha", "type": "quantitative", "title": "Total area (ha)", "format": ","}
         ]
       }
     },
     {
       "data": {
         "values": [
-          {
-            "label": "(unnamed) (1939)",
-            "area_ha": 2384394,
-            "note": "Black Friday, 1939"
-          }
+          {"fire_name": "Black Friday", "area_ha": 2384394, "note": "Largest on record"}
         ]
       },
       "mark": {
@@ -137,25 +106,15 @@
         "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
         "fontWeight": 700,
-        "fontSize": 14,
-        "color": "#fff",
+        "fontSize": 13,
+        "color": "#ffffff",
         "align": "right",
-        "dx": -10
+        "dx": -12
       },
       "encoding": {
-        "y": {
-          "field": "label",
-          "type": "nominal",
-          "sort": "-x"
-        },
-        "x": {
-          "field": "area_ha",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "note",
-          "type": "nominal"
-        }
+        "y": {"field": "fire_name", "type": "nominal", "sort": "-x"},
+        "x": {"field": "area_ha", "type": "quantitative"},
+        "text": {"field": "note", "type": "nominal"}
       }
     }
   ]

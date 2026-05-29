@@ -122,19 +122,18 @@
           "legend": {
             "orient": "none",
             "legendX": {
-              "signal": "width - 150"
+              "signal": "width - 195"
             },
-            "legendY": -42,
+            "legendY": -52,
             "direction": "horizontal",
+            "title": null,
             "fillColor": "#ffffff",
             "strokeColor": "#e4dccf",
-            "padding": 8,
+            "padding": 7,
             "cornerRadius": 6,
-            "labelFontSize": 12,
-            "titleFontSize": 11,
-            "titleColor": "#6b625a",
-            "titlePadding": 4,
-            "symbolSize": 90
+            "labelFontSize": 11,
+            "symbolSize": 80,
+            "symbolStrokeWidth": 0
           }
         },
         "opacity": {
