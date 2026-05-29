@@ -173,12 +173,12 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 
 /* ---------- Bridge / storytelling interlude between charts ---------- */
 .bridge {
-  max-width: 54ch;
-  margin: var(--s6) auto;
+  max-width: 56ch;
+  margin: var(--s4) auto;
   text-align: center;
   font-family: var(--display);
   font-style: italic;
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(19px, 1.8vw, 23px);
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -187,9 +187,9 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 .bridge::before {
   content: "";
   display: block;
-  width: 7px;
-  height: 7px;
-  margin: 0 auto var(--s3);
+  width: 6px;
+  height: 6px;
+  margin: 0 auto var(--s2);
   border-radius: 50%;
   background: var(--flame);
 }
