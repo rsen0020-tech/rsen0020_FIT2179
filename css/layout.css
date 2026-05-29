@@ -110,7 +110,7 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 .chart-card > div[id] { width: 100%; flex: 1; }
 .insight {
   position: relative;
-  background: #fdebc6;
+  background: var(--paper-warm);
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 18px 22px;
