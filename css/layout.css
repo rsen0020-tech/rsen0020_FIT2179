@@ -11,7 +11,8 @@
   --sand: #8a5a33;
   --green: #5b8c5a;
 
-  --display: "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
+  --display: "DM Serif Display", "Plus Jakarta Sans", Georgia, serif;
+  --chart-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
 
   --s1: 8px;
@@ -43,14 +44,14 @@ body {
 
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.022em;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
   color: var(--ember);
 }
-h1 { font-size: clamp(40px, 5.6vw, 56px); font-weight: 800; letter-spacing: -0.028em; }
-h2 { font-size: clamp(28px, 3.4vw, 38px); }
-h3 { font-size: clamp(19px, 1.6vw, 22px); margin-bottom: var(--s2); }
+h1 { font-size: clamp(44px, 6vw, 62px); letter-spacing: -0.022em; }
+h2 { font-size: clamp(30px, 3.6vw, 42px); }
+h3 { font-size: clamp(20px, 1.7vw, 24px); margin-bottom: var(--s2); }
 h4 { font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ember); margin-bottom: var(--s2); margin-top: var(--s4); }
 
 p { max-width: 66ch; }
@@ -111,27 +112,44 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   position: relative;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 14px 20px;
+  border-radius: 10px;
+  padding: 18px 22px 18px 26px;
   margin-top: var(--s3);
   font-size: 14.5px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--ink);
   max-width: none;
-  box-shadow: 0 1px 3px rgba(36, 31, 28, 0.04);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(36, 31, 28, 0.04), 0 10px 22px -14px rgba(178, 71, 0, 0.18);
+}
+.insight::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--ember) 0%, var(--flame) 70%, rgba(214, 90, 31, 0.2) 100%);
+  border-radius: 0 2px 2px 0;
 }
 .insight strong {
-  display: inline-block;
-  background: var(--ember);
-  color: #fff;
+  display: block;
+  font-family: var(--chart-display);
   font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 3px 9px 4px;
-  border-radius: 3px;
-  margin-right: 8px;
-  vertical-align: 2px;
+  color: var(--ember);
+  margin-bottom: 6px;
+}
+.insight strong::before {
+  content: "◆";
+  font-size: 9px;
+  letter-spacing: 0;
+  margin-right: 7px;
+  position: relative;
+  top: -1px;
+  color: var(--flame);
 }
 
 /* Floating variant — used for the map so the insight sits in the chart card's
@@ -139,9 +157,9 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 @media (min-width: 768px) {
   .insight-corner {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 290px;
+    top: 28px;
+    right: 28px;
+    width: 360px;
     margin-top: 0;
     z-index: 5;
   }
