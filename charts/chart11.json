@@ -117,7 +117,7 @@
           {
             "size_class_ha": "100k+",
             "n_fires": 53,
-            "n_label": 450,
+            "n_label": 2700,
             "label": "Only 53 reached 100,000+ ha"
           }
         ]
@@ -161,10 +161,52 @@
             "size_class_ha": "1–10",
             "n_label": 3000,
             "label": "Most fires burn ≤ 10 ha"
-          },
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter, system-ui, sans-serif",
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "color": "#5a2600",
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke",
+        "dy": -8,
+        "align": "center"
+      },
+      "encoding": {
+        "x": {
+          "field": "size_class_ha",
+          "type": "nominal",
+          "sort": [
+            "0–1",
+            "1–10",
+            "10–100",
+            "100–1k",
+            "1k–10k",
+            "10k–100k",
+            "100k+"
+          ]
+        },
+        "y": {
+          "field": "n_label",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
           {
             "size_class_ha": "100k+",
-            "n_label": 450,
+            "n_label": 2700,
             "label": "Only 53 reached 100,000+ ha"
           }
         ]
@@ -176,8 +218,12 @@
         "fontWeight": 600,
         "fontSize": 14,
         "color": "#5a2600",
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke",
         "dy": -8,
-        "align": "center"
+        "align": "right",
+        "dx": -6
       },
       "encoding": {
         "x": {

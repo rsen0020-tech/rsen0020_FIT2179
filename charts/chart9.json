@@ -101,7 +101,7 @@
           "scale": {
             "domain": [
               0,
-              36000
+              38000
             ]
           }
         },
@@ -118,6 +118,12 @@
               "#b34700",
               "#5b8c5a"
             ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "offset": 4,
+            "titleOrient": "left"
           }
         },
         "opacity": {
@@ -153,7 +159,7 @@
             "month": "Jan",
             "fire_type": "Bushfire",
             "n_fires": 5247,
-            "n_label": 10000,
+            "n_label": 14000,
             "label": "Bushfire peak"
           },
           {
@@ -218,7 +224,7 @@
           {
             "month": "Jan",
             "fire_type": "Bushfire",
-            "n_label": 10000,
+            "n_label": 14000,
             "label": "Bushfire peak"
           },
           {
@@ -237,7 +243,10 @@
         "fontSize": 14,
         "color": "#5a2600",
         "dy": -8,
-        "align": "center"
+        "align": "center",
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke"
       },
       "encoding": {
         "x": {
