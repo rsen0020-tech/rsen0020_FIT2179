@@ -1,4 +1,4 @@
-const V = "v9";
+const V = "v10";
 const charts = [
   {id: "#map",          spec: "charts/chart1.json?" + V},
   {id: "#ch-district",  spec: "charts/chart2.json?" + V},

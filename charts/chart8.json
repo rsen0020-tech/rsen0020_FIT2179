@@ -9,7 +9,7 @@
     "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Plus Jakarta Sans, Inter, system-ui, sans-serif",
+    "font": "Spectral, Georgia, serif",
     "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
@@ -87,17 +87,17 @@
           "legend": {
             "orient": "none",
             "legendX": {
-              "signal": "width - 195"
+              "signal": "width - 240"
             },
-            "legendY": -52,
+            "legendY": -56,
             "direction": "horizontal",
             "title": null,
             "fillColor": "#ffffff",
             "strokeColor": "#e4dccf",
-            "padding": 7,
-            "cornerRadius": 6,
-            "labelFontSize": 11,
-            "symbolSize": 80,
+            "padding": 11,
+            "cornerRadius": 8,
+            "labelFontSize": 13,
+            "symbolSize": 140,
             "symbolStrokeWidth": 0
           }
         },
