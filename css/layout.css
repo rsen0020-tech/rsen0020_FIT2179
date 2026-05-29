@@ -139,10 +139,10 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
 }
 .insight strong {
   display: block;
-  font-family: var(--sans);
-  font-size: 12px;
+  font-family: var(--chart-display);
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink);
   margin-bottom: 8px;
@@ -165,9 +165,9 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
     border-radius: 2px;
   }
   .insight-corner strong {
-    font-size: 13px;
-    letter-spacing: 0.16em;
-    margin-bottom: 9px;
+    font-size: 14.5px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
   }
 }
 
