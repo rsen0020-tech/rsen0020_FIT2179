@@ -1,4 +1,4 @@
-const V = "v15";
+const V = "v16";
 const charts = [
   {id: "#map",          spec: "charts/chart1.json?" + V},
   {id: "#ch-district",  spec: "charts/chart2.json?" + V},
@@ -19,3 +19,22 @@ charts.forEach(function (c) {
     console.error("Failed to render " + c.spec, err);
   });
 });
+
+// For each .equal-pair row, set both insight boxes to the taller content
+// height so paired insights align top-and-bottom.
+function equalizeInsightPairs() {
+  document.querySelectorAll(".equal-pair").forEach(function (row) {
+    var insights = row.querySelectorAll(".insight");
+    if (insights.length < 2) return;
+    insights.forEach(function (i) { i.style.minHeight = ""; });
+    var max = 0;
+    insights.forEach(function (i) { if (i.offsetHeight > max) max = i.offsetHeight; });
+    insights.forEach(function (i) { i.style.minHeight = max + "px"; });
+  });
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () { setTimeout(equalizeInsightPairs, 50); });
+} else {
+  setTimeout(equalizeInsightPairs, 50);
+}
+window.addEventListener("resize", equalizeInsightPairs);
