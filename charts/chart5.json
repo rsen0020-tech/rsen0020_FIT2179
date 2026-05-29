@@ -3,7 +3,7 @@
   "description": "Heatmap of at-risk facility counts by fire weather district and risk category, with the count printed in each cell. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "Risk category mix across districts",
-    "subtitle": "Number of at-risk facilities in each district and category",
+    "subtitle": "Colour shows all tiers; numbers are the Category 3 count",
     "anchor": "start",
     "fontSize": 21,
     "subtitleFontSize": 13,
@@ -92,12 +92,12 @@
       }
     },
     {
-      "transform": [{"filter": "datum.n > 0"}],
+      "transform": [{"filter": "datum.n > 0 && datum.category === 'CAT 3'"}],
       "mark": {
         "type": "text",
         "font": "Inter, system-ui, sans-serif",
         "fontSize": 12,
-        "fontWeight": 600
+        "fontWeight": 700
       },
       "encoding": {
         "text": {"field": "n", "type": "quantitative"},
