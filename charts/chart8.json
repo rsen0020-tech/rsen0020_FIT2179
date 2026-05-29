@@ -83,6 +83,12 @@
               "#b34700",
               "#5b8c5a"
             ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "offset": 4,
+            "titleOrient": "left"
           }
         },
         "opacity": {
@@ -176,7 +182,10 @@
         "fontSize": 14,
         "color": "#5a2600",
         "align": "center",
-        "dy": -8
+        "dy": -8,
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke"
       },
       "encoding": {
         "x": {

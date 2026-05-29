@@ -77,7 +77,7 @@
           "scale": {
             "domain": [
               0,
-              6500000
+              7000000
             ]
           }
         },
@@ -94,6 +94,12 @@
               "#b34700",
               "#5b8c5a"
             ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "offset": 4,
+            "titleOrient": "left"
           }
         },
         "opacity": {
@@ -142,20 +148,20 @@
           {
             "year": 2003,
             "area_ha": 5406777,
-            "area_label": 6100000,
+            "area_label": 6700000,
             "label": "2003 alpine fires"
-          },
-          {
-            "year": 2019,
-            "area_ha": 3314826,
-            "area_label": 4100000,
-            "label": "Black Summer (2019–20)"
           },
           {
             "year": 2009,
             "area_ha": 2052579,
-            "area_label": 2900000,
+            "area_label": 6100000,
             "label": "Black Saturday (2009)"
+          },
+          {
+            "year": 2019,
+            "area_ha": 3314826,
+            "area_label": 5500000,
+            "label": "Black Summer (2019–20)"
           }
         ]
       },
@@ -193,18 +199,18 @@
         "values": [
           {
             "year": 2003,
-            "area_label": 6100000,
+            "area_label": 6700000,
             "label": "2003 alpine fires"
           },
           {
-            "year": 2019,
-            "area_label": 4100000,
-            "label": "Black Summer (2019–20)"
+            "year": 2009,
+            "area_label": 6100000,
+            "label": "Black Saturday (2009)"
           },
           {
-            "year": 2009,
-            "area_label": 2900000,
-            "label": "Black Saturday (2009)"
+            "year": 2019,
+            "area_label": 5500000,
+            "label": "Black Summer (2019–20)"
           }
         ]
       },
@@ -216,7 +222,10 @@
         "fontStyle": "italic",
         "fontWeight": 600,
         "fontSize": 14,
-        "color": "#5a2600"
+        "color": "#5a2600",
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke"
       },
       "encoding": {
         "x": {

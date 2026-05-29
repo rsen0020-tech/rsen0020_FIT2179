@@ -137,7 +137,10 @@
         "color": "#5a2600",
         "align": "left",
         "dx": -14,
-        "dy": 0
+        "dy": 0,
+        "stroke": "#faf7f2",
+        "strokeWidth": 4,
+        "paintOrder": "stroke"
       },
       "encoding": {
         "text": {
