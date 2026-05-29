@@ -5,18 +5,18 @@
     "text": "When fires happen",
     "subtitle": "Two seasonal rhythms side by side",
     "anchor": "start",
-    "offset": 14,
-    "fontSize": 26,
+    "offset": 12,
+    "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Fraunces, Georgia, serif",
-    "subtitleFontSize": 19,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
-    "subtitleFontStyle": "italic"
+    "subtitleFontWeight": 500
   },
   "width": "container",
-  "height": 340,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -25,23 +25,23 @@
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
@@ -88,7 +88,7 @@
           ],
           "axis": {
             "labelAngle": 0,
-            "labelFontSize": 15
+            "labelFontSize": 13
           }
         },
         "xOffset": {
@@ -97,7 +97,13 @@
         "y": {
           "field": "n_fires",
           "type": "quantitative",
-          "title": "Number of fires"
+          "title": "Number of fires",
+          "scale": {
+            "domain": [
+              0,
+              36000
+            ]
+          }
         },
         "color": {
           "field": "fire_type",
@@ -145,24 +151,92 @@
         "values": [
           {
             "month": "Jan",
-            "n_fires": 10500,
+            "fire_type": "Bushfire",
+            "n_fires": 5247,
+            "n_label": 10000,
             "label": "Bushfire peak"
           },
           {
             "month": "Apr",
-            "n_fires": 30100,
+            "fire_type": "Prescribed Burn",
+            "n_fires": 30250,
+            "n_label": 34500,
+            "label": "Planned-burn peak"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#5a2600",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "month",
+          "type": "nominal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        },
+        "xOffset": {
+          "field": "fire_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Bushfire",
+              "Prescribed Burn"
+            ]
+          }
+        },
+        "y": {
+          "field": "n_fires",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "n_label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "month": "Jan",
+            "fire_type": "Bushfire",
+            "n_label": 10000,
+            "label": "Bushfire peak"
+          },
+          {
+            "month": "Apr",
+            "fire_type": "Prescribed Burn",
+            "n_label": 34500,
             "label": "Planned-burn peak"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "font": "Fraunces, Georgia, serif",
+        "font": "Inter, system-ui, sans-serif",
         "fontStyle": "italic",
         "fontWeight": 600,
-        "fontSize": 15,
+        "fontSize": 14,
         "color": "#5a2600",
-        "dy": -12,
+        "dy": -8,
         "align": "center"
       },
       "encoding": {
@@ -184,8 +258,18 @@
             "Dec"
           ]
         },
+        "xOffset": {
+          "field": "fire_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Bushfire",
+              "Prescribed Burn"
+            ]
+          }
+        },
         "y": {
-          "field": "n_fires",
+          "field": "n_label",
           "type": "quantitative"
         },
         "text": {

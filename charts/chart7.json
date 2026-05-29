@@ -5,39 +5,39 @@
     "text": "Area burnt in Victoria each year",
     "subtitle": "Click 'Bushfire' or 'Prescribed Burn' in the legend to isolate a series",
     "anchor": "start",
-    "offset": 14,
-    "fontSize": 26,
+    "offset": 12,
+    "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Fraunces, Georgia, serif",
-    "subtitleFontSize": 19,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
-    "subtitleFontStyle": "italic"
+    "subtitleFontWeight": 500
   },
   "width": "container",
-  "height": 380,
+  "height": 400,
   "config": {
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
@@ -77,7 +77,7 @@
           "scale": {
             "domain": [
               0,
-              6000000
+              6500000
             ]
           }
         },
@@ -142,30 +142,31 @@
           {
             "year": 2003,
             "area_ha": 5406777,
+            "area_label": 6100000,
             "label": "2003 alpine fires"
           },
           {
             "year": 2019,
             "area_ha": 3314826,
-            "label": "Black Summer (2019\u201320)"
+            "area_label": 4100000,
+            "label": "Black Summer (2019–20)"
           },
           {
             "year": 2009,
             "area_ha": 2052579,
+            "area_label": 2900000,
             "label": "Black Saturday (2009)"
           }
         ]
       },
       "mark": {
-        "type": "text",
-        "align": "right",
-        "dx": -12,
-        "dy": -6,
-        "font": "Fraunces, Georgia, serif",
-        "fontStyle": "italic",
-        "fontWeight": 600,
-        "fontSize": 15,
-        "color": "#5a2600"
+        "type": "rule",
+        "color": "#5a2600",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
       },
       "encoding": {
         "x": {
@@ -180,6 +181,56 @@
         },
         "y": {
           "field": "area_ha",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "area_label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 2003,
+            "area_label": 6100000,
+            "label": "2003 alpine fires"
+          },
+          {
+            "year": 2019,
+            "area_label": 4100000,
+            "label": "Black Summer (2019–20)"
+          },
+          {
+            "year": 2009,
+            "area_label": 2900000,
+            "label": "Black Saturday (2009)"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -8,
+        "font": "Inter, system-ui, sans-serif",
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "color": "#5a2600"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1950,
+              2024
+            ]
+          }
+        },
+        "y": {
+          "field": "area_label",
           "type": "quantitative"
         },
         "text": {

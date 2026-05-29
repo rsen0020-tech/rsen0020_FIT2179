@@ -5,18 +5,18 @@
     "text": "Area burnt by decade",
     "subtitle": "Bushfire vs planned (prescribed) burning",
     "anchor": "start",
-    "offset": 14,
-    "fontSize": 26,
+    "offset": 12,
+    "fontSize": 21,
     "fontWeight": 700,
     "color": "#211c19",
-    "font": "Fraunces, Georgia, serif",
-    "subtitleFontSize": 19,
+    "font": "Inter Tight, Inter, system-ui, sans-serif",
+    "subtitleFontSize": 13,
     "subtitleColor": "#6b625a",
     "subtitleFont": "Inter, system-ui, sans-serif",
-    "subtitleFontStyle": "italic"
+    "subtitleFontWeight": 500
   },
   "width": "container",
-  "height": 340,
+  "height": 360,
   "autosize": {
     "type": "fit",
     "contains": "padding"
@@ -25,23 +25,23 @@
     "font": "Inter, system-ui, sans-serif",
     "padding": 10,
     "axis": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "titlePadding": 12,
+      "titlePadding": 8,
       "domainColor": "#c9c0b3",
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
     "legend": {
-      "labelFontSize": 17,
-      "titleFontSize": 18,
+      "labelFontSize": 13,
+      "titleFontSize": 14,
       "titleColor": "#211c19",
       "labelColor": "#211c19",
       "titleFontWeight": 600,
-      "symbolSize": 140
+      "symbolSize": 110
     },
     "view": {
       "stroke": null
@@ -130,19 +130,19 @@
           {
             "decade": "2000s",
             "area_ha": 14310000,
+            "area_label": 16500000,
             "label": "Worst decade on record"
           }
         ]
       },
       "mark": {
-        "type": "text",
-        "font": "Fraunces, Georgia, serif",
-        "fontStyle": "italic",
-        "fontWeight": 600,
-        "fontSize": 15,
+        "type": "rule",
         "color": "#5a2600",
-        "align": "center",
-        "dy": -12
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
       },
       "encoding": {
         "x": {
@@ -151,6 +151,40 @@
         },
         "y": {
           "field": "area_ha",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "area_label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "decade": "2000s",
+            "area_label": 16500000,
+            "label": "Worst decade on record"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter, system-ui, sans-serif",
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "color": "#5a2600",
+        "align": "center",
+        "dy": -8
+      },
+      "encoding": {
+        "x": {
+          "field": "decade",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "area_label",
           "type": "quantitative"
         },
         "text": {
