@@ -1,4 +1,4 @@
-const V = "v19";
+const V = "v20";
 const charts = [
   {id: "#map",          spec: "charts/chart1.json?" + V},
   {id: "#ch-district",  spec: "charts/chart2.json?" + V},
@@ -38,3 +38,28 @@ if (document.readyState === "loading") {
   setTimeout(equalizeInsightPairs, 50);
 }
 window.addEventListener("resize", equalizeInsightPairs);
+
+// Show/hide reveal buttons (e.g. the fire weather districts map).
+function wireReveals() {
+  document.querySelectorAll(".reveal-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      if (!panel) return;
+      var isHidden = panel.hasAttribute("hidden");
+      if (isHidden) {
+        panel.removeAttribute("hidden");
+        btn.setAttribute("aria-expanded", "true");
+        btn.innerHTML = btn.dataset.hide;
+      } else {
+        panel.setAttribute("hidden", "");
+        btn.setAttribute("aria-expanded", "false");
+        btn.innerHTML = btn.dataset.show;
+      }
+    });
+  });
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", wireReveals);
+} else {
+  wireReveals();
+}
