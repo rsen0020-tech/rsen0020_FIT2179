@@ -16,7 +16,7 @@
     "subtitleFontWeight": 500
   },
   "width": "container",
-  "height": 380,
+  "height": 460,
   "autosize": {
     "type": "fit",
     "contains": "padding"
