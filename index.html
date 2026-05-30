@@ -87,6 +87,21 @@
                 Yarra Ranges carries more than twice the at-risk count of any other shire.
             </p>
 
+            <div class="reveal">
+                <button class="reveal-btn" type="button" aria-expanded="false"
+                        aria-controls="districts-fig"
+                        data-show="&#9654;&ensp;Show the nine fire weather districts"
+                        data-hide="&#9660;&ensp;Hide the fire weather districts map">&#9654;&ensp;Show the nine fire weather districts</button>
+                <figure id="districts-fig" class="reveal-panel" hidden>
+                    <img src="data/district-map.jpg"
+                         alt="Map of Victoria divided into its nine fire weather districts: Mallee, Wimmera, South West, Northern Country, North Central, Central, North East, West &amp; South Gippsland and East Gippsland.">
+                    <figcaption>
+                        Victoria's nine fire weather districts. Source: Country Fire Authority (CFA),
+                        <a href="https://www.cfa.vic.gov.au/warnings-restrictions/find-your-fire-weather-district">Find your fire weather district</a>.
+                    </figcaption>
+                </figure>
+            </div>
+
             <div class="pure-g equal-pair">
                 <div class="pure-u-1 pure-u-md-1-2">
                     <div class="chart-card">
@@ -314,6 +329,11 @@
                     <li>
                         <strong>Australian Bureau of Statistics &mdash; Local Government Areas
                         (ASGS 2011)</strong>, filtered to Victoria and simplified for fast loading.
+                    </li>
+                    <li>
+                        <strong>Fire weather districts map</strong>, Country Fire Authority (CFA) &mdash;
+                        <a href="https://www.cfa.vic.gov.au/warnings-restrictions/find-your-fire-weather-district">cfa.vic.gov.au</a>
+                        (reference image, shown via the toggle in Part&nbsp;1).
                     </li>
                 </ul>
 

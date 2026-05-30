@@ -100,8 +100,8 @@
         "values": [
           {
             "category": "CAT 1",
-            "n": 24,
-            "n_label": 230,
+            "n_start": 85,
+            "n_label": 225,
             "note": "Must close on Code Red days"
           }
         ]
@@ -117,7 +117,7 @@
       },
       "encoding": {
         "y": {
-          "field": "n",
+          "field": "n_start",
           "type": "quantitative"
         },
         "y2": {
@@ -130,7 +130,7 @@
         "values": [
           {
             "category": "CAT 1",
-            "n_label": 230,
+            "n_label": 225,
             "note": "Must close on Code Red days"
           }
         ]
