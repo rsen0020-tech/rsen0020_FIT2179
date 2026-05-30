@@ -208,6 +208,61 @@
           "type": "nominal"
         }
       }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "rect",
+        "fill": "#fff4ea",
+        "stroke": "#e4dccf",
+        "strokeWidth": 1,
+        "cornerRadius": 6
+      },
+      "encoding": {
+        "x": {"value": 6},
+        "x2": {"value": 286},
+        "y": {"value": 14},
+        "y2": {"value": 112}
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": "INSIGHT",
+        "font": "Inter, system-ui, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 12,
+        "color": "#b34700",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {"value": 22},
+        "y": {"value": 28}
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": [
+          "The 2000s burnt more bushfire area",
+          "than any other decade — driven by",
+          "the 2003 and 2006 alpine fires."
+        ],
+        "font": "Inter, system-ui, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "lineHeight": 17,
+        "color": "#211c19",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {"value": 22},
+        "y": {"value": 50}
+      }
     }
   ]
 }
