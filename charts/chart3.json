@@ -1,10 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Top 15 local government areas by number of at-risk education facilities, with Yarra Ranges highlighted. Source: BARR register (data.vic.gov.au).",
+  "description": "Top 15 local government areas by number of at-risk education facilities, with Yarra Ranges highlighted. A checkbox switches between a capped 0-80 view (so the pack is readable) and the full 0-160 scale that shows Yarra Ranges' true count of 156. Source: BARR register (data.vic.gov.au).",
   "title": {
     "text": "Top 15 LGAs by at-risk facilities",
+    "subtitle": "Tick the box to expand the scale and reveal Yarra Ranges' full 156",
     "anchor": "start",
     "fontSize": 21,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#6b625a",
+    "subtitleFont": "Inter, system-ui, sans-serif",
+    "subtitleFontWeight": 500,
     "font": "Spectral, Georgia, serif",
     "fontWeight": 700,
     "color": "#211c19",
@@ -32,6 +37,16 @@
     },
     "view": {"stroke": null}
   },
+  "params": [
+    {
+      "name": "showFull",
+      "value": false,
+      "bind": {
+        "input": "checkbox",
+        "name": "Show Yarra Ranges at full length (156)   "
+      }
+    }
+  ],
   "encoding": {
     "y": {
       "field": "lga_name",
@@ -56,11 +71,15 @@
       ]
     },
     "x": {
-      "field": "n_display",
+      "field": "n",
       "type": "quantitative",
       "title": "At-risk facilities",
-      "scale": {"domain": [0, 80]},
-      "axis": {"values": [0, 20, 40, 60, 80]}
+      "scale": {
+        "domainMin": 0,
+        "domainMax": {"expr": "showFull ? 160 : 80"},
+        "clamp": true
+      },
+      "axis": {"tickCount": 5}
     }
   },
   "layer": [
@@ -88,8 +107,7 @@
               "Surf Coast"
             ]
           }
-        },
-        {"calculate": "min(datum.n, 80)", "as": "n_display"}
+        }
       ],
       "params": [
         {
@@ -116,7 +134,7 @@
     {
       "data": {
         "values": [
-          {"lga_name": "Yarra Ranges", "n_display": 80, "note": "156 — over twice any other LGA"}
+          {"lga_name": "Yarra Ranges", "n": 156, "note": "156 — over twice any other LGA"}
         ]
       },
       "mark": {
