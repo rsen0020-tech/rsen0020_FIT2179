@@ -208,6 +208,47 @@
           "type": "nominal"
         }
       }
+    },
+    {
+      "data": {"values": [{"decade": "1950s", "y": 15700000}]},
+      "mark": {
+        "type": "text",
+        "text": "INSIGHT",
+        "font": "Inter, system-ui, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 12,
+        "color": "#b34700",
+        "align": "left",
+        "baseline": "top",
+        "dx": -30
+      },
+      "encoding": {
+        "x": {"field": "decade", "type": "nominal"},
+        "y": {"field": "y", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {"values": [{"decade": "1950s", "y": 14500000}]},
+      "mark": {
+        "type": "text",
+        "text": [
+          "The 2000s burnt more bushfire area",
+          "than any other decade — driven by",
+          "the 2003 and 2006 alpine fires."
+        ],
+        "font": "Inter, system-ui, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "lineHeight": 17,
+        "color": "#211c19",
+        "align": "left",
+        "baseline": "top",
+        "dx": -30
+      },
+      "encoding": {
+        "x": {"field": "decade", "type": "nominal"},
+        "y": {"field": "y", "type": "quantitative"}
+      }
     }
   ]
 }
