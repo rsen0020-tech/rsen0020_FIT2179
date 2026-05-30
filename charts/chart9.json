@@ -294,6 +294,61 @@
           "type": "nominal"
         }
       }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "rect",
+        "fill": "#fff4ea",
+        "stroke": "#e4dccf",
+        "strokeWidth": 1,
+        "cornerRadius": 6
+      },
+      "encoding": {
+        "x": {"value": {"expr": "width - 300"}},
+        "x2": {"value": {"expr": "width - 8"}},
+        "y": {"value": 12},
+        "y2": {"value": 110}
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": "INSIGHT",
+        "font": "Inter, system-ui, sans-serif",
+        "fontWeight": 700,
+        "fontSize": 12,
+        "color": "#b34700",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {"value": {"expr": "width - 284"}},
+        "y": {"value": 26}
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": [
+          "Bushfires peak hard in January;",
+          "planned burning is pushed into the",
+          "cooler shoulder months around April."
+        ],
+        "font": "Inter, system-ui, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 500,
+        "lineHeight": 17,
+        "color": "#211c19",
+        "align": "left",
+        "baseline": "top"
+      },
+      "encoding": {
+        "x": {"value": {"expr": "width - 284"}},
+        "y": {"value": 48}
+      }
     }
   ]
 }
