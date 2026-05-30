@@ -30,41 +30,66 @@
       "tickColor": "#c9c0b3",
       "gridColor": "#eee8dc"
     },
-    "legend": {
-      "labelFontSize": 13,
-      "titleFontSize": 14,
-      "titleColor": "#211c19",
-      "labelColor": "#211c19",
-      "titleFontWeight": 600,
-      "symbolSize": 110
+    "view": {"stroke": null}
+  },
+  "encoding": {
+    "y": {
+      "field": "lga_name",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Yarra Ranges",
+        "Greater Bendigo",
+        "Nillumbik",
+        "Mornington Peninsula",
+        "Macedon Ranges",
+        "East Gippsland",
+        "Mount Alexander",
+        "Cardinia",
+        "Manningham",
+        "Indigo",
+        "Alpine",
+        "Ballarat",
+        "Hepburn",
+        "Murrindindi",
+        "Surf Coast"
+      ]
     },
-    "view": {
-      "stroke": null
+    "x": {
+      "field": "n_display",
+      "type": "quantitative",
+      "title": "At-risk facilities",
+      "scale": {"domain": [0, 80]},
+      "axis": {"values": [0, 20, 40, 60, 80]}
     }
   },
   "layer": [
     {
-      "data": {
-        "url": "data/barr_by_lga.csv"
-      },
+      "data": {"url": "data/barr_by_lga.csv"},
       "transform": [
         {
-          "window": [
-            {
-              "op": "rank",
-              "as": "rank"
-            }
-          ],
-          "sort": [
-            {
-              "field": "n",
-              "order": "descending"
-            }
-          ]
+          "filter": {
+            "field": "lga_name",
+            "oneOf": [
+              "Yarra Ranges",
+              "Greater Bendigo",
+              "Nillumbik",
+              "Mornington Peninsula",
+              "Macedon Ranges",
+              "East Gippsland",
+              "Mount Alexander",
+              "Cardinia",
+              "Manningham",
+              "Indigo",
+              "Alpine",
+              "Ballarat",
+              "Hepburn",
+              "Murrindindi",
+              "Surf Coast"
+            ]
+          }
         },
-        {
-          "filter": "datum.rank <= 15"
-        }
+        {"calculate": "min(datum.n, 80)", "as": "n_display"}
       ],
       "params": [
         {
@@ -76,75 +101,22 @@
           }
         }
       ],
-      "mark": {
-        "type": "bar",
-        "color": "#b34700"
-      },
+      "mark": {"type": "bar", "color": "#b34700"},
       "encoding": {
-        "y": {
-          "field": "lga_name",
-          "type": "nominal",
-          "title": null,
-          "sort": [
-            "Yarra Ranges",
-            "Greater Bendigo",
-            "Nillumbik",
-            "Mornington Peninsula",
-            "Macedon Ranges",
-            "East Gippsland",
-            "Mount Alexander",
-            "Cardinia",
-            "Manningham",
-            "Indigo",
-            "Alpine",
-            "Ballarat",
-            "Murrindindi",
-            "Hepburn",
-            "Surf Coast"
-          ]
-        },
-        "x": {
-          "field": "n",
-          "type": "quantitative",
-          "title": "At-risk facilities",
-          "scale": {
-            "domain": [
-              0,
-              80
-            ],
-            "clamp": true
-          }
-        },
         "fillOpacity": {
-          "condition": {
-            "param": "hover",
-            "empty": false,
-            "value": 1
-          },
+          "condition": {"param": "hover", "empty": false, "value": 1},
           "value": 0.85
         },
         "tooltip": [
-          {
-            "field": "lga_name",
-            "type": "nominal",
-            "title": "LGA"
-          },
-          {
-            "field": "n",
-            "type": "quantitative",
-            "title": "Facilities"
-          }
+          {"field": "lga_name", "type": "nominal", "title": "LGA"},
+          {"field": "n", "type": "quantitative", "title": "Facilities"}
         ]
       }
     },
     {
       "data": {
         "values": [
-          {
-            "lga_name": "Yarra Ranges",
-            "n": 80,
-            "note": "156 — over twice any other LGA"
-          }
+          {"lga_name": "Yarra Ranges", "n_display": 80, "note": "156 — over twice any other LGA"}
         ]
       },
       "mark": {
@@ -158,35 +130,7 @@
         "fontSize": 14
       },
       "encoding": {
-        "y": {
-          "field": "lga_name",
-          "type": "nominal",
-          "sort": [
-            "Yarra Ranges",
-            "Greater Bendigo",
-            "Nillumbik",
-            "Mornington Peninsula",
-            "Macedon Ranges",
-            "East Gippsland",
-            "Mount Alexander",
-            "Cardinia",
-            "Manningham",
-            "Indigo",
-            "Alpine",
-            "Ballarat",
-            "Murrindindi",
-            "Hepburn",
-            "Surf Coast"
-          ]
-        },
-        "x": {
-          "field": "n",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "note",
-          "type": "nominal"
-        }
+        "text": {"field": "note", "type": "nominal"}
       }
     }
   ]
