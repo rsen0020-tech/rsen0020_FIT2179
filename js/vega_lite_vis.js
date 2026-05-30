@@ -20,8 +20,6 @@ charts.forEach(function (c) {
   });
 });
 
-// For each .equal-pair row, set both insight boxes to the taller content
-// height so paired insights align top-and-bottom.
 function equalizeInsightPairs() {
   document.querySelectorAll(".equal-pair").forEach(function (row) {
     var insights = row.querySelectorAll(".insight");
@@ -39,7 +37,6 @@ if (document.readyState === "loading") {
 }
 window.addEventListener("resize", equalizeInsightPairs);
 
-// Show/hide reveal buttons (e.g. the fire weather districts map).
 function wireReveals() {
   document.querySelectorAll(".reveal-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
