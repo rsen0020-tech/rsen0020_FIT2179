@@ -213,6 +213,25 @@ section > p { margin-bottom: var(--s4); max-width: 66ch; font-size: 18px; }
   background: linear-gradient(90deg, var(--ember), var(--flame));
 }
 
+/* ---------- Vega-Lite bound input controls (e.g. the LGA scale toggle) ---------- */
+.vega-bindings {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: var(--s2);
+  padding-left: 2px;
+}
+.vega-bindings .vega-bind { display: inline-flex; align-items: center; }
+.vega-bindings input[type="checkbox"] {
+  accent-color: var(--ember);
+  width: 15px;
+  height: 15px;
+  margin-left: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
 /* ---------- Insight callout ---------- */
 .callout {
   font-family: var(--sans);
